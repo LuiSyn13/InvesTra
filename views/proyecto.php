@@ -11,6 +11,7 @@
 
 <body>
     <div class="project">
+        <a href="principal.php"><img src="../img/icons_document/home.png" alt="" width="15px">Inicio</a>
         <div class="nav-options-project">
             <a href="generaldata.php" id="generaldata-link">Datos Generales</a>
             <a href="alimentar.php" id="alimentar-link">Alimentar</a>

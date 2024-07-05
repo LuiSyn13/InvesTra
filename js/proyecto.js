@@ -12,6 +12,14 @@ export_project.addEventListener('click', () => {
     }
 })
 
+document.addEventListener('click', () => {
+    if(!export_project.contains(event.target) && !submenu_export.contains(event.target)) {
+        submenu_export.classList.remove("options-export-on")
+        submenu_export.classList.add("options-export-off")
+    }
+})
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-options-project a');
     const currentUrl = window.location.href;
