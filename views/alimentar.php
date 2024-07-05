@@ -14,6 +14,8 @@
         <div class="content-info-project">
             <div class="content-form">
                 
+                <label style="font-size: 30px">Hola mundo!</label>
+
             </div>
         </div>
     </div>
