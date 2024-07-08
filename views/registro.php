@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesion</title>
+  <title>Registro</title>
   <link rel="icon" href="../img/icons_document/InvesTra.png">
   <link rel="stylesheet" href="../css/register.css">
 </head>
@@ -18,7 +18,7 @@
             <span>Inves<span class="twoTextLogo">Tra</span></span>
         </div>
         <div class="input-card">
-            <label class="txt_input">Registrarse como:</label>
+        <b><label class="txt_input">Registrarse como:</label></b>
         <table align="center" border="0" style="display: flex">
         <tr>
             <td>
@@ -34,11 +34,10 @@
                 </div>
             </a>
             </td>
-            <td width="60px">
-
+            <td width="60px" style="display: flex">
             </td>
             <td>
-            <a href="../views/i-investigador.php">
+            <a href="../views/i-asesor.php">
                 <div class="input-card2">
                     <center>
                     <div class="icon">
