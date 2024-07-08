@@ -1,18 +1,20 @@
-<?php
-include("header.php");
-include("proyecto.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/proyecto.css">
+    <title>Datos Generales</title>
+    <?php
+        include("link_head.php");
+    ?>
 </head>
 
 <body>
+    <?php
+    include("header.php");
+    include("proyecto.php");
+    ?>
     <div class="container">
         <div class="content-info-project">
             <form action="">
@@ -32,15 +34,14 @@ include("proyecto.php");
                         </tr>
                         <tr>
                             <td>Periodo de la Investigación:</td>
-                            <td><input type="date" name="fecha_inicio"> > a > <input type="date" name="fecha_fin"></td>
+                            <td><input type="date" name="fecha_inicio"> a <input type="date" name="fecha_fin"></td>
                         </tr>
                         <tr>
                             <td colspan="2">Breve descripción del negocio:</td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <textarea name="descripcion_negocio" class="txtArea_desc" 
-                                placeholder="<?php for($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n" ;?>"></textarea>
+                                <textarea name="descripcion_negocio" class="txtArea_desc" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
                             </td>
                         </tr>
                     </table>

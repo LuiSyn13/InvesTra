@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
-    <?php
-        include("link_head.php");
-    ?>
+    <title>Pro-Obj-Hip</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/proyecto.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../img/icons_document/InvesTra.png">
 </head>
 <body>
-<?php
+    <?php
         include("header.php");
         include("proyecto.php");
     ?>
