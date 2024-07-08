@@ -19,7 +19,9 @@
     background: #1D2024;
     height: 100vh;
   }
-  
+
+/* Register */
+
   .screen-2 {
     width: 300px;
     background: #f1f7fe;
@@ -65,12 +67,6 @@
     font-family: 'Courier New', Courier, monospace;
   }
 
-  .txt_input,
-  input,
-  span, a {
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
   .screen-2 .input-card {
     background: white;
     box-shadow: 0 0 2em #e6e9f9;
@@ -80,6 +76,10 @@
     gap: 0.5em;
     border-radius: 20px;
     color: #4d4d4d;
+  }
+
+  .screen-2 .input-card a {
+    text-decoration: none;
   }
   
   .screen-2 .input-card2 {
@@ -91,6 +91,31 @@
     gap: 0.5em;
     border-radius: 10px;
     color: #ffffff;
+  }
+
+  .screen-2 .input-card2 a {
+    text-decoration: none;
+  }
+
+  .screen-2 .input-card3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 20px;
+    color: #4d4d4d;
+  }
+
+  .screen-2 .input-card4 {
+    background: white;
+    box-shadow: 0 0 2em #e6e9f9;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 0.5em;
+    border-radius: 20px;
+    color: #4d4d4d;
   }
 
   .screen-2 .icon {
@@ -108,3 +133,101 @@
     border: none;
     width: 100%;
   }
+
+/* Input */
+  .form__field {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 16px;
+      font-weight:700;    
+      display: flex;
+    }
+  }
+  
+  .form__field{
+    display: flex;
+    &:required,&:invalid { box-shadow:none; }
+  }
+
+/* Select (combobox) */
+  :root {
+    --darkgray: #2F3135;
+  }
+  
+  select {
+    appearance: none;
+    font-family: 'Courier New', Courier, monospace;
+    outline: 10px red;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+  }
+  
+  .select {
+    color: #fff;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5em;
+    background-color: #2F3135;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  .select:hover::after {
+    color: #14FF00;
+  }
+
+/* Botones aceptar / omitir */
+  .screen-2 .aceptar {
+    padding: 1em;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .screen-2 .fondo {
+    background: #14FF00;
+  }
+  
+  .screen-2 .aceptar:hover {
+    background: rgb(11, 11, 11);
+  }
+
+  .omitir {
+    text-decoration: none;
+    font-size: 14px;
+    background: #D3D3D3;
+    display: flex;
+    justify-content: center;
+  }
+  
