@@ -18,7 +18,7 @@
             <a href="#">Variables</a>
             <a href="#">Cuadro de diagnóstico</a>
             <a href="#">Problemas, Objetivos e Hipótesis</a>
-            <a href="#">Antecedentes</a>
+            <a href="antecedentes.php">Antecedentes</a>
         </div>
         <div class="export-project" id="export-project">
             <img src="../img/icons_document/sharet-white.png" class="icon-nav">

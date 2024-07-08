@@ -20,15 +20,15 @@ include("proyecto.php");
                     <table>
                         <tr>
                             <td>Nombre del proyecto:</td>
-                            <td><input type="text" name="nombre_proyecto" placeholder="Nombre del proyecto..."></td>
+                            <td><input type="text" name="nombre_proyecto" placeholder="Nombre del proyecto..." class="ip_gdata"></td>
                         </tr>
                         <tr>
                             <td>Nombre de la Empresa:</td>
-                            <td><input type="text" name="nombre_empresa" placeholder="Nombre de la empresa..."></td>
+                            <td><input type="text" name="nombre_empresa" placeholder="Nombre de la empresa..." class="ip_gdata"></td>
                         </tr>
                         <tr>
                             <td>Dirección de la Empresa:</td>
-                            <td><input type="text" name="direccion_empresa" placeholder="Dirección de la empresa..."></td>
+                            <td><input type="text" name="direccion_empresa" placeholder="Dirección de la empresa..." class="ip_gdata"></td>
                         </tr>
                         <tr>
                             <td>Periodo de la Investigación:</td>
@@ -38,11 +38,16 @@ include("proyecto.php");
                             <td colspan="2">Breve descripción del negocio:</td>
                         </tr>
                         <tr>
-                            <td colspan="2"><textarea name="descripcion_negocio" class="txtArea_desc"></textarea></td>
+                            <td colspan="2">
+                                <textarea name="descripcion_negocio" class="txtArea_desc" 
+                                placeholder="<?php for($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n" ;?>"></textarea>
+                            </td>
                         </tr>
                     </table>
                 </div>
-                <input type="submit" value="Aceptar">
+                <div class="btn_gdata_card">
+                    <input type="submit" value="Aceptar" class="btn_gdata">
+                </div>
             </form>
         </div>
     </div>
