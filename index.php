@@ -39,7 +39,7 @@
       <div class="newaccount">
         <span>¿No tienes una cuenta?</span>
       </div>
-      <a href="../views/registro.php" class="login newregister">Registrarse</a>
+      <a href="views/registro.php" class="login newregister">Registrarse</a>
     </div>
   </form>
 </body>
