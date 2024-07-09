@@ -1,16 +1,19 @@
-<?php
-    include("header.php");
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <?php
+        include("link_head.php");
+    ?>
 </head>
+
 <body>
+    <?php
+    include("header.php");
+    ?>
     <div class="container">
         <div class="nav_options">
             <a href="principal.php"><img src="../img/icons_document/home.png" class="icon-nav">Inicio</a>
@@ -22,4 +25,5 @@
         </div>
     </div>
 </body>
+
 </html>

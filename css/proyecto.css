@@ -30,13 +30,14 @@
 }
 
 .nav-options-project a:hover {
-    background: #2F3135;
+    background: #7b7b7b;
     color: white;
     border-radius: 5px;
 }
 
 .nav-options-project a.selected {
-    background: #000; /* Color negro */
+    background: #000;
+    /* Color negro */
     color: white;
     border-radius: 5px;
 }
@@ -63,12 +64,11 @@
     top: 35px;
     right: 10px;
     z-index: 1;
-    
 }
 
 .sub_export {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .sub_export a {
@@ -82,7 +82,6 @@
 .sub_export a:hover {
     background: #D9D9D9;
 }
-
 
 /* GENERAL DATA */
 .content-info-project {
@@ -103,4 +102,46 @@
 .txtArea_desc {
     width: 99%;
     height: 270px;
+    resize: none;
+    outline: none;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.content-form td {
+    padding: 5px;
+}
+
+.content-form input {
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 5px;
+    background: #EEEEEE;
+    outline: none;
+}
+
+.ip_gdata {
+    width: 96%;
+}
+
+.btn_gdata_card {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_gdata {
+    padding: 5px 20px 5px 20px;
+    background: #14FF00;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn_gdata:hover {
+    background: #2F3135;
+    color: white;
 }

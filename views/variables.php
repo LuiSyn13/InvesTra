@@ -1,16 +1,19 @@
-<?php
-    include("header.php");
-    include("proyecto.php");
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Variables</title>
+    <?php
+        include("link_head.php");
+    ?>
 </head>
 <body>
     <br><br>
+    <?php
+    include("header.php");
+    include("proyecto.php");
+    ?>
     <div class="container">
         <div class="content-info-project">
             <form action="">
@@ -24,12 +27,12 @@
                         <tr>
                             <td align="center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
                             </td>
                             <td></td>
                             <td align="Center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -60,6 +63,5 @@
                 </center>
             </form>
         </div>
-    </div>
 </body>
 </html>
