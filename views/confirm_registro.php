@@ -23,7 +23,7 @@
         <center><img src="../img/icons_register/registrado.png" alt="" width="90px"></center>
         </div>
         <div class="input-card2" style="background: none">
-        <a href="../views/registro.php" class="aceptar fondo">Iniciar sesión</a>
+        <a href="../index.php" class="aceptar fondo">Iniciar sesión</a>
         </div>
         </center>
 </div>

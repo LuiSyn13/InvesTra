@@ -54,7 +54,7 @@
             </td>
             <td align="center">
                 <!--<input type="submit" formaction="p_usuario.php" class="aceptar omitir" style="width: 100%" value="Omitir">-->
-                <input type="submit" class="aceptar omitir" style="width: 100%" value="Omitir">
+                <a href="confirm_registro.php" class="aceptar omitir" style="width: 90%">Omitir</a>
 
             </td>
         </tr>
