@@ -15,7 +15,7 @@
         <div class="nav-options-project">
             <a href="generaldata.php" id="generaldata-link">Datos Generales</a>
             <a href="alimentar.php" id="alimentar-link">Alimentar</a>
-            <a href="#">Variables</a>
+            <a href="variables.php" id="variables-link">Variables</a>
             <a href="#">Cuadro de diagnóstico</a>
             <a href="#">Problemas, Objetivos e Hipótesis</a>
             <a href="#">Antecedentes</a>
