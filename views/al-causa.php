@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentar</title>
+    <title>Alimentar - Causa</title>
     <?php
     include("link_head.php");
     ?>
@@ -23,7 +23,7 @@
                         <div class="content-form-alimentar">
                             <a href="al-sintoma.php">
                             <div class="content-form-opalimentar">
-                                <center><label for="">Sintoma</label></center>
+                                <center><label for="">Síntoma</label></center>
                             </div>
                             </a>
                             <div class="content-form-opalimentar" style="background: #FFB800; color: black">
@@ -31,12 +31,12 @@
                             </div>
                             <a href="al-pronostico.php">
                             <div class="content-form-opalimentar">
-                                <center><label>Pronostico</label></center>
+                                <center><label>Pronóstico</label></center>
                             </div>
                             </a>
                             <a href="al-control.php">
                             <div class="content-form-opalimentar">
-                                <center><label for="">Control Pronostico</label></center>
+                                <center><label for="">Control Pronóstico</label></center>
                             </div>
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                                     <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg">
                                 </div>
                                 <br>
-                                <textarea name="txtsintomas" class="txtArea_desc"
+                                <textarea name="txtcausa" class="txtArea_desc"
                                     style="font-size: 15px; background: #EEEEEE"
                                     placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Causa 0$i" . "\n"; ?>"></textarea>
                             </div>
