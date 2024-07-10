@@ -1,5 +1,5 @@
 <div class="project">
-    <a href="principal.php"><img src="../img/icons_document/home.png" alt="" width="15px">Inicio</a>
+    <a href="principal.php" class="a_home"><img src="../img/icons_document/home.png" alt="">Inicio</a>
     <div class="nav-options-project">
         <a href="generaldata.php" id="generaldata-link">Datos Generales</a>
         <a href="al-sintoma.php" id="alimentar-link">Alimentar</a>

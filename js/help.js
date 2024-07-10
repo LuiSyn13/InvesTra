@@ -16,4 +16,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     modal.onclick = function () {
         modal.style.display = "none";
     }
+
+    
 });

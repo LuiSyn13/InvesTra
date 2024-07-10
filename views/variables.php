@@ -59,7 +59,7 @@
                 </div>
                 <br>
                 <center>
-                    <input type="submit" value="ACEPTAR" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
+                    <input type="submit" value="Aceptar" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
                 </center>
             </form>
         </div>
