@@ -22,20 +22,20 @@
                     <td>
                         <div class="content-form-alimentar">
                             <a href="al-sintoma.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label for="">Sintoma</label></center>
                             </div>
                             </a>
                             <a href="al-causa.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label for="">Causa</label></center>
                             </div>
                             </a>
-                            <div class="content-form-opalimentar">
+                            <div class="content-form-opalimentar" style="background: #FFB800; color: black">
                                 <center><label>Pronostico</label></center>
                             </div>
                             <a href="al-control.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label for="">Control Pronostico</label></center>
                             </div>
                             </a>

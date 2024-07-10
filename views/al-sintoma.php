@@ -21,21 +21,21 @@
                 <tr>
                     <td>
                         <div class="content-form-alimentar">
-                            <div class="content-form-opalimentar">
+                            <div class="content-form-opalimentar" style="background: #FFB800; color: black">
                                 <center><label for="">Sintoma</label></center>
                             </div>
                             <a href="al-causa.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label for="">Causa</label></center>
                             </div>
                             </a>
                             <a href="al-pronostico.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label>Pronostico</label></center>
                             </div>
                             </a>
                             <a href="al-control.php">
-                            <div class="content-form-opalimentar" style="background: #BEBEBE">
+                            <div class="content-form-opalimentar">
                                 <center><label for="">Control Pronostico</label></center>
                             </div>
                             </a>
