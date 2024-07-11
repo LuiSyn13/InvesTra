@@ -5,7 +5,7 @@
         <a href="al-sintoma.php" id="alimentar-link">Alimentar</a>
         <a href="variables.php">Variables</a>
         <a href="cuadro_diagnostico.php">Cuadro de diagnóstico</a>
-        <a href="pro_obj_hip.php">Problemas, Objetivos e Hipótesis</a>
+        <a href="problema.php">Problemas, Objetivos e Hipótesis</a>
         <a href="antecedentes.php">Antecedentes</a>
     </div>
     <div class="export-project" id="export-project">

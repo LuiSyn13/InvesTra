@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentar</title>
+    <title>Alimentar - Sintomas</title>
     <?php
     include("link_head.php");
     ?>
@@ -22,7 +22,7 @@
                     <td>
                         <div class="content-form-alimentar">
                             <div class="content-form-opalimentar" style="background: #FFB800; color: black">
-                                <center><label for="">Sintoma</label></center>
+                                <center><label for="">Síntoma</label></center>
                             </div>
                             <a href="al-causa.php">
                             <div class="content-form-opalimentar">
@@ -31,12 +31,12 @@
                             </a>
                             <a href="al-pronostico.php">
                             <div class="content-form-opalimentar">
-                                <center><label>Pronostico</label></center>
+                                <center><label>Pronóstico</label></center>
                             </div>
                             </a>
                             <a href="al-control.php">
                             <div class="content-form-opalimentar">
-                                <center><label for="">Control Pronostico</label></center>
+                                <center><label for="">Control Pronóstico</label></center>
                             </div>
                             </a>
                         </div>
@@ -53,8 +53,8 @@
                                     <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg">
                                 </div>
                                 <br>
-                                <textarea name="txtsintomas" class="txtArea_desc"
-                                    style="font-size: 15px; background: #EEEEEE"
+                                <textarea name="txtsintomas" class="txtArea_desc" 
+                                    style="font-size: 15px; background: #EEEEEE" 
                                     placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
                             </div>
                     </td>
