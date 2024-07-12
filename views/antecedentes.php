@@ -7,14 +7,14 @@
     <title>Antecedentes</title>
     <link rel="stylesheet" href="../css/proyecto.css">
     <?php
-    include("link_head.php");
+    include("template/link_head.php");
     ?>
 </head>
 
 <body>
     <?php
-    include("header.php");
-    include("proyecto.php");
+    include("template/header.php");
+    include("template/proyecto.php");
     ?>
     <div class="container">
         <div class="content-info-project">

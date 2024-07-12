@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alimentar</title>
     <?php
-    include("link_head.php");
+    include("template/link_head.php");
     ?>
 </head>
 
 <body>
     <?php
-    include("header.php");
-    include("proyecto.php");
+    include("template/header.php");
+    include("template/proyecto.php");
     ?>
     <div class="container" style="">
         <div class="content-info-project">
@@ -25,19 +25,19 @@
                                 <center><label for="">Sintoma</label></center>
                             </div>
                             <a href="al-causa.php">
-                            <div class="content-form-opalimentar">
-                                <center><label for="">Causa</label></center>
-                            </div>
+                                <div class="content-form-opalimentar">
+                                    <center><label for="">Causa</label></center>
+                                </div>
                             </a>
                             <a href="al-pronostico.php">
-                            <div class="content-form-opalimentar">
-                                <center><label>Pronostico</label></center>
-                            </div>
+                                <div class="content-form-opalimentar">
+                                    <center><label>Pronostico</label></center>
+                                </div>
                             </a>
                             <a href="al-control.php">
-                            <div class="content-form-opalimentar">
-                                <center><label for="">Control Pronostico</label></center>
-                            </div>
+                                <div class="content-form-opalimentar">
+                                    <center><label for="">Control Pronostico</label></center>
+                                </div>
                             </a>
                         </div>
                     </td>
@@ -46,16 +46,13 @@
                     <td>
                         <br>
                         <form action="">
-                            <div class="content-form-alimentar"
-                                style="padding: 1.7em; background: white; flex-direction: column;">
+                            <div class="content-form-alimentar" style="padding: 1.7em; background: white; flex-direction: column;">
                                 <div class="descripcion-container">
                                     <label>Descripcion:</label>
                                     <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg">
                                 </div>
                                 <br>
-                                <textarea name="txtsintomas" class="txtArea_desc"
-                                    style="font-size: 15px; background: #EEEEEE"
-                                    placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
+                                <textarea name="txtsintomas" class="txtArea_desc" style="font-size: 15px; background: #EEEEEE" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
                             </div>
                     </td>
                 </tr>
@@ -80,4 +77,5 @@
 
 </body>
 <script src="../js/help.js"></script>
+
 </html>
