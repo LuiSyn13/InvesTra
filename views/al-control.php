@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentar</title>
+    <title>Alimentar - Control de Pronóstico</title>
     <?php
     include("template/link_head.php");
     ?>
@@ -37,7 +37,7 @@
                                 </div>
                             </a>
                             <div class="content-form-opalimentar" style="background: #FFB800; color: black">
-                                <center><label for="">Control Pronostico</label></center>
+                                <center><label for="">Control Pronóstico</label></center>
                             </div>
                         </div>
                     </td>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentar</title>
+    <title>Alimentar - Sintomas</title>
     <?php
     include("template/link_head.php");
     ?>
@@ -22,7 +22,7 @@
                     <td>
                         <div class="content-form-alimentar">
                             <div class="content-form-opalimentar" style="background: #FFB800; color: black">
-                                <center><label for="">Sintoma</label></center>
+                                <center><label for="">Síntoma</label></center>
                             </div>
                             <a href="al-causa.php">
                                 <div class="content-form-opalimentar">

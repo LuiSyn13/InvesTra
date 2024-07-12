@@ -27,12 +27,12 @@
                         <tr>
                             <td align="center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
                             </td>
                             <td></td>
                             <td align="Center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
                             </td>
                         </tr>
                         <tr>

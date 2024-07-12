@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alimentar</title>
+    <title>Alimentar - Pronóstico</title>
     <?php
     include("template/link_head.php");
     ?>
@@ -32,7 +32,7 @@
                                 </div>
                             </a>
                             <div class="content-form-opalimentar" style="background: #FFB800; color: black">
-                                <center><label>Pronostico</label></center>
+                                <center><label>Pronóstico</label></center>
                             </div>
                             <a href="al-control.php">
                                 <div class="content-form-opalimentar">
@@ -52,7 +52,7 @@
                                     <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg">
                                 </div>
                                 <br>
-                                <textarea name="txtsintomas" class="txtArea_desc" style="font-size: 15px; background: #EEEEEE" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Pronostico 0$i" . "\n"; ?>"></textarea>
+                                    <textarea name="txtpronostico" class="txtArea_desc" style="font-size: 15px; background: #EEEEEE" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Pronostico 0$i" . "\n"; ?>"></textarea>
                             </div>
                     </td>
                 </tr>
