@@ -14,7 +14,7 @@
         </div>
         <div class="cont_subuserOff" id="content_subuser">
             <div class="submenu_user">
-                <a href="#">Datos Personales</a>
+                <a href="../investigador/datos_personales.php">Datos Personales</a>
                 <a href="#">Cambiar Foto de Perfil</a>
                 <a href="../asesor/inicio.php">Cambiar contraseña</a>
                 <a href="../../index.php">Cerrar Sesion</a>
