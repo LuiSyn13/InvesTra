@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,8 @@
             border-collapse: collapse;
         }
 
-        .table-container th, .table-container td {
+        .table-container th,
+        .table-container td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
@@ -61,14 +63,23 @@
         }
     </style>
 </head>
+
 <body>
-    <?php include("template/header.php"); ?>
+    <?php include("template/header.php");
+    ?>
     <div class="container">
+        <?php
+        include("template/principal.php")
+        ?>
+        <div class="content_info">
             <a href="generaldata.php" class="a_new_project"><img src="../img/icons_document/new_project.png" class="icon-nav" alt=""> Nuevo proyecto</a>
             <div class="table-design-content">
+                <!-- AQUI AGREGAS TU INFORMACION -->
                 <label for="">Investra</label>
             </div>
         </div>
     </div>
+    </div>
 </body>
+
 </html>

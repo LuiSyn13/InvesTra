@@ -157,5 +157,6 @@ header {
     color: black;
     display: flex;
     align-items: center;
+    width: 150px;
     gap: 15px;
 }
