@@ -1,6 +1,6 @@
 <header>
     <div>
-        <a href="principal.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
+        <a href="inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
     </div>
     <div class="cont_search">
         <input type="text" class="search_nav" placeholder="Buscar proyecto...">

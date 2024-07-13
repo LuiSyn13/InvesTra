@@ -18,6 +18,9 @@
         <?php
             include("template/principal.php")
         ?>
+        <div class="content_info">
+            
+        </div>
     </div>
 </body>
 

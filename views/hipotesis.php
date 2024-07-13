@@ -13,7 +13,7 @@
         include("template/header.php");
         include("template/proyecto.php");
     ?>
-    <div class="container" style="">
+    <div class="container">
         <div class="content-info-project">
             <table border="0" style="display: flex;">
                 <tr>
