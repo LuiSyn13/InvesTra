@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hipótesis</title>
+    <title>Problema</title>
     <?php
-    include("template/link_head.php");
+    include("../template/link_head.php");
     ?>
 </head>
 <body>
-    <?php
-        include("template/header.php");
-        include("template/proyecto.php");
+<?php
+    include("../template/header.php");
+    include("../template/proyecto.php");
     ?>
     <div class="container">
         <div class="content-info-project">
@@ -19,19 +19,19 @@
                 <tr>
                     <td>
                         <div class="content-form-alimentar">
-                            <a href="problema.php">
-                            <div class="content-form-opalimentar" style="width: 145px;">
+                            <div class="content-form-opalimentar" style="width: 145px; background: #FFB800; color: black">
                                 <center><label for="">Problema</label></center>
                             </div>
-                            </a>
                             <a href="objetivo.php">
                             <div class="content-form-opalimentar" style="width: 145px;">
                                 <center><label for="">Objetivo</label></center>
                             </div>
                             </a>
-                            <div class="content-form-opalimentar" style="width: 145px; background: #FFB800; color: black">
+                            <a href="hipotesis.php">
+                            <div class="content-form-opalimentar" style="width: 145px;">
                                 <center><label for="">Hipótesis</label></center>
                             </div>
+                            </a>
                         </div>
                     </td>
                 </tr>
@@ -42,21 +42,21 @@
                             <div class="content-form-alimentar"
                                 style="padding: 1.7em; background: white; flex-direction: column;">
                                 <div class="descripcion-container">
-                                    <label>Hipótesis General:</label>
-                                    <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg2">
+                                    <label>Problema General:</label>
+                                    <img src="../../img/ayuda.png" class="icon-nav" id="ayudaImg2">
                                 </div>
                                 <br>
                                 <textArea onkeydown="cancelar()" name="txtproblemagen" class="txtArea_poh"
                                     placeholder=""></textArea>
                                 <br>
                                 <div class="descripcion-container">
-                                    <label>Hipótesis Específica(s):</label>
-                                    <img src="../img/ayuda.png" class="icon-nav" id="ayudaImg3">
+                                    <label>Problema(s) Específico(s):</label>
+                                    <img src="../../img/ayuda.png" class="icon-nav" id="ayudaImg3">
                                 </div>
                                 <br>
                                 <textArea name="txtproblemasesp" class="txtArea_desc"
                                     style="height: 170px"
-                                    placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Hipótesis esp. 0$i" . "\n"; ?>"></textArea>
+                                    placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Problema esp. 0$i" . "\n"; ?>"></textArea>
                             </div>
                     </td>
                 </tr>
@@ -73,22 +73,22 @@
     </div>
 
     <div id="myModal2">
-        <div class="modal-content2" id="modalContent">
+        <div class="modal-content" id="modalContent">
             <label style="font-weight: bold;"><i>Guía rápida:</i></label>
-            <p><i>Para establecer correctamente la hipótesis del proyecto, esta debe plantearse como una afirmación a la pregunta previamente formulada (Problema General).
-                <br>Lo mismo debe establecerse con las hipótesis específicas y sus correspondientes problemas específicos.</i></p>
+            <p><i>Para establecer correctamente la pregunta general del proyecto se recomienda establecerla como esta serie de ejemplos (pueden ser utilizados como referencia)</i></p>
+            <p><i>Ejemplos:<br>¿Por qué dormita la vida?<br>¿Por qué dormita la vida?<br>¿Por qué dormita la vida?<br>¿Por qué dormita la vida?</i></p>
         </div>
     </div>
     <div id="myModal3">
-        <div class="modal-content3" id="modalContent">
-        <label style="font-weight: bold;"><i>Guía rápida:</i></label>
-            <p><i>Para insertar las hipótesis específicas uno por uno, sepárelos presionando ENTER como se observa en el campo de texto.</i></p>
+        <div class="modal-content" id="modalContent">
+            <label style="font-weight: bold;"><i>Guía rápida:</i></label>
+            <p><i>Para insertar los problemas específicos uno por uno, sepárelos presionando ENTER como se observa en el campo de texto.</i></p>
             <label style="font-weight: bold;"><i>Aclaración:</i></label>
-            <p><i>El número de hipótesis específicas que se guardarán deben ser igual al número de problemas específicos y objetivos específicos que se plantearon o se plantearán.</i></p>
+            <p><i>El número de problemas específicos que se guardarán deben ser igual al número de objetivos específicos e hipótesis específicas que se plantearon o se plantearán</i></p>
         </div>
     </div>
 
 </body>
-<script src="../js/help.js"></script>
+<script src="../../js/help.js"></script>
 </body>
 </html>
