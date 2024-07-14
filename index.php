@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form action="views/investigador/inicio.php" method="post">
+  <form action="controllers/p_login.php" method="post">
     <div class="screen-1">
       <div class="logo">
         <img src="img/icons_document/InvesTra.png" alt="">

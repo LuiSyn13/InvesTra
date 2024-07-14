@@ -1,9 +1,12 @@
+<?php
+include("../controllers/connection.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro - Investigador(a)</title>
+  <title>Registro - Asesor(a)</title>
   <link rel="icon" href="../img/icons_document/InvesTra.png">
   <link rel="stylesheet" href="../css/register.css">
 </head>
@@ -17,11 +20,11 @@
             <span>Inves<span class="twoTextLogo">Tra</span></span>
         </div>
         <div class="input-card3"  style="width: 700px">
-        <form action="../views/i-datosesp.php" method="post">
+        <form action="../controllers/verify.php" method="post">
         <table align="center" border="0" style="width: 650px">
         <tr>
             <td colspan="2">
-                <b><label class="txt_input">Complete sus datos personales, investigador(a):</label></b><br><br>
+                <b><label class="txt_input">Complete sus datos personales, asesor(a):</label></b><br><br>
             </td>
         </tr>
         <tr>
@@ -65,10 +68,16 @@
                 <div class="select">
                     <select name="lstespecialidad" required>
                     <option value="" disabled selected>Seleccione su esp.</option>
-                    <option value="Est">Est</option>
-                    <option value="Bach">Bach</option>
-                    <option value="MAg">Mag</option>
-                    <option value="Dr">Dr</option>
+                    <?php 
+                    $sqle = "select * from especialidad";
+                    $fila=mysqli_query($cn,$sqle);
+
+                    while ($r=mysqli_fetch_assoc($fila)) {
+                    ?>
+                    <option value="<?php echo $r["idespecialidad"]; ?>"> <?php echo $r["nomespecialidad"];?> </option>
+                    <?php
+                    }
+                    ?>
                     </select>
                 </div>
             </div>            
@@ -76,6 +85,7 @@
         </tr>
         <tr>
             <td align="center" colspan="3">
+                <input type="hidden" name="tipousuario" value="asesor">
                 <input type="submit" class="aceptar fondo" style="width: 50%" value="Aceptar">
             </td>
         </tr>
