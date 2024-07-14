@@ -143,8 +143,16 @@ header {
     background: #D3D3D3;
 }
 
+.nav_options a.selected {
+    background: #BEBEBE;
+    /* Color negro */
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
 .content_info {
     padding: 20px;
+    width: 100%;
 }
 
 .a_new_project {
@@ -156,5 +164,6 @@ header {
     color: black;
     display: flex;
     align-items: center;
+    width: 150px;
     gap: 15px;
 }

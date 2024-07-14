@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Variables</title>
     <?php
-        include("link_head.php");
+    include("../template/link_head.php");
     ?>
 </head>
 <body>
     <br><br>
     <?php
-    include("header.php");
-    include("proyecto.php");
+    include("../template/header.php");
+    include("../template/proyecto.php");
     ?>
     <div class="container">
         <div class="content-info-project">
@@ -27,12 +27,12 @@
                         <tr>
                             <td align="center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
                             </td>
                             <td></td>
                             <td align="Center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
+                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -59,7 +59,7 @@
                 </div>
                 <br>
                 <center>
-                    <input type="submit" value="ACEPTAR" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
+                    <input type="submit" value="Aceptar" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
                 </center>
             </form>
         </div>
