@@ -20,29 +20,29 @@
         include("../template/principal.php");
         ?>
         <div class="content_info">
-            <span class="title-doc">Listado de documentos recibidos</span>
-            <div>
-                <table>
+            <span class="title_doc">Listado de documentos recibidos</span>
+            <div class="table-container">
+                <table class="table_plt">
                     <thead>
-                        <tr>
-                            <td>Título</td>
-                            <td>Empresa</td>
-                            <td>Estado</td>
-                            <td>Fecha enviado</td>
-                            <td>C. de diagnóstico</td>
-                            <td>Revisar</td>
-                            <td>Enviar</td>
+                        <tr class="first-tr-tbl">
+                            <th>Título</th>
+                            <th>Empresa</th>
+                            <th>Estado</th>
+                            <th>Fecha enviado</th>
+                            <th>C. de diagnóstico</th>
+                            <th>Revisar</th>
+                            <th>Enviar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Las aventuras del Ingenierio :/</td>
                             <td>Al morzar</td>
-                            <td>Pendiente</td>
+                            <td class="option-date">Pendiente</td>
                             <td>13-07-2024</td>
-                            <td><button>Visualizar</button></td>
-                            <td><a href="d-revisar.php">Revisar</a></td>
-                            <td><a href="d-enviar.php">Enviar</a></td>
+                            <td class="option-date"><button class="btn btn-view">Visualizar</button></td>
+                            <td class="option-date"><a href="d-revisar.php" class="btn btn-revise">Revisar</a></td>
+                            <td class="option-date"><a href="d-enviar.php" class="btn btn-send">Enviar</a></td>
                         </tr>
                     </tbody>
                 </table>

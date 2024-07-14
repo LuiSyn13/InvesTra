@@ -1,4 +1,126 @@
-.title-doc {
+.table-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title_doc {
+    margin-top: 2rem;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+.table_plt {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_plt td,
+th {
+    border: 1px solid #D3D3D3;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table_plt th {
+    background: #f2f2f2;
+    ;
+}
+
+.table_plt td {
+    background: #ffffff;
+}
+
+.option-date {
+    text-align: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-view {
+    background: #00b2ff;
+    border: none;
+    color: white;
+}
+
+.btn-revise {
+    background: #ffb800;
+    color: white;
+}
+
+.btn-send {
+    color: white;
+    background: #14ff00;
+}
+
+
+/*  d - revisar   */
+.content_rev {
+    display: flex;
+    width: 100%;
+}
+
+.read_pdf {
+    width: 50%;
+
+    embed {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+
+.desc_pdf {
+    width: 50%;
+    padding: 0.5rem;
+    span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+    .textA_rev {
+        margin-top: 1rem;
+        width: 90%;
+        height: 300px;
+        resize: none;
+        outline: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.btn_doc {
+    background: #ffb800;
+
+}
+
+.btn_submit {
+    background: #14ff00;
+    border: none;
+
+}
+
+.btn_doc, .btn_submit {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.btn_opt {
+    margin-top: 1rem;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
 }
