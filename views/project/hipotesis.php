@@ -8,6 +8,7 @@
     <?php
     include("../template/link_head.php");
     ?>
+    <link rel="stylesheet" href="../../css/po_obj_hip.css">
 </head>
 
 <body>

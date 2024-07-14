@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antecedentes</title>
-    <link rel="stylesheet" href="../css/proyecto.css">
-    <link rel="stylesheet" href="../css/antecedentes.css">
+    <link rel="stylesheet" href="../../css/antecedentes.css">
     <?php
     include("../template/link_head.php");
     ?>
