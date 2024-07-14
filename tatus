@@ -1,0 +1,207 @@
+[33mcommit 07419ef76e4fd37371e861782fb65d4c4e249cf7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jenzi <jencenhuertacarrasco91@gmail.com>
+Date:   Thu Jul 11 01:04:52 2024 -0500
+
+    agrege el cuadro_diagnostico.php .
+
+[33mcommit e9d139552e54850ae3d06e3286e5e7c3d9b28bbd[m
+Merge: fe330a0 4bf1775
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Wed Jul 10 12:57:26 2024 -0500
+
+    Merge pull request #9 from Ariess202/main
+    
+    Cambio estético en los alimentar
+
+[33mcommit 4bf1775bb81f5ae49428efe67b5fafa0263f3957[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Tue Jul 9 19:47:51 2024 -0500
+
+    cambio estético en los alimentar
+
+[33mcommit fe330a014e802bcc0b9175174c3c876301dd6689[m
+Merge: efadccb 3ad97ec
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Tue Jul 9 19:15:04 2024 -0500
+
+    Merge pull request #8 from Ariess202/main
+    
+    Update Desing - Alimentar
+
+[33mcommit 3ad97ec93752dc5ecaec7f60270fa289d4398d0d[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Tue Jul 9 17:52:45 2024 -0500
+
+    Archivos nuevos: al-sintoma.php, al-causa.php, al-pronostico.php, al-control.php, help.js - Modificados: confirm_registro.php, i-datosesp.php, proyecto.php, proyecto.css
+
+[33mcommit efadccb0604dd207215f9951d0ee1a2e73efe000[m
+Merge: 45f98ce cac61b8
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Tue Jul 9 12:38:14 2024 -0500
+
+    Merge pull request #7 from educhavez25/main
+    
+    vista completa - variables
+
+[33mcommit cac61b8963dd2045930087cabd6cc0f8dfdb94a5[m
+Merge: f7161ab 45f98ce
+Author: Edu Chavez Cruz <educhavez785@gmail.com>
+Date:   Tue Jul 9 11:22:27 2024 -0500
+
+    variables vista completa
+
+[33mcommit f7161ab448ca425c66b085c241e06a7c06aadbbb[m
+Author: Edu Chavez Cruz <educhavez785@gmail.com>
+Date:   Tue Jul 9 10:31:35 2024 -0500
+
+    vista de variables
+
+[33mcommit 45f98ceb2b05970afc0058504f8b7e782bf7b757[m
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Sun Jul 7 23:20:05 2024 -0500
+
+    Actualización y correción de la plantilla Header y Proyecto
+
+[33mcommit 573c3f255bee6cf673d20a45068ccdde0351798c[m
+Merge: 974195e bf08778
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Sun Jul 7 22:51:02 2024 -0500
+
+    Actualizacion de las vistas registro y datos generales
+
+[33mcommit 974195ed080a110d8ee34afeea41b5d5314522f5[m
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Sun Jul 7 22:45:45 2024 -0500
+
+    Update V2 generaldata
+
+[33mcommit bf087784c2d009e563c2975a26f702fa037ed10c[m
+Merge: 6b1035b 9ed5f1d
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Sun Jul 7 22:08:55 2024 -0500
+
+    Merge pull request #6 from Ariess202/main
+    
+    Update file register
+
+[33mcommit 9ed5f1df541e5c1684dc09a181c7c213d6bb6065[m
+Merge: e6a20c1 6b1035b
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Sun Jul 7 21:53:17 2024 -0500
+
+    Archivos nuevos: i-datosesp.php, confirm_registro.php - Modificado: registro.php(boton registrar), register.css, i-asesor.php, i-investigador.php
+
+[33mcommit e6a20c1cc3064d0bf8f9741b1660cff790590286[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Sun Jul 7 21:48:26 2024 -0500
+
+    Archivos nuevos: i-datosesp.php, confirm_registro.php - Modificado: registro.php(boton registrar), register.css, i-asesor.php, i-investigador.php
+
+[33mcommit 6b1035be7a57e174042f5efde52be9de09c01885[m
+Merge: 4fc2f5d eddd284
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Sun Jul 7 17:07:39 2024 -0500
+
+    Merge pull request #5 from Ariess202/main
+    
+    Add file register
+
+[33mcommit eddd284f57b26cf972ebc3ecc78ce5f148df58f3[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Sun Jul 7 16:59:28 2024 -0500
+
+    Archivos nuevos: register.css, i-asesor.php (vacio), i-investigador.php (vacio), registro.php  Modificado: index.php
+
+[33mcommit 4fc2f5dfea7362dc6cd15039e1aca6190ccb0c25[m
+Merge: d15dfca fa25621
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Fri Jul 5 10:38:21 2024 -0500
+
+    Merge pull request #4 from educhavez25/main
+    
+    header y proyecto agregado - variables
+
+[33mcommit fa25621211b10c091ceedc89410f41186c1e00ae[m
+Author: Edu Chavez Cruz <educhavez785@gmail.com>
+Date:   Fri Jul 5 10:35:02 2024 -0500
+
+    header y proyecto agregado
+
+[33mcommit d15dfca5aad2e719f2ffe94a063326d86fb61c61[m
+Merge: 4350437 2e3c051
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Fri Jul 5 10:30:54 2024 -0500
+
+    update files alimentar - variables
+
+[33mcommit 4350437db5d63faa7912e52be2034aef23d81dfc[m
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Fri Jul 5 10:27:51 2024 -0500
+
+    add file antecedentes.php
+
+[33mcommit 2e3c05139b2df8e502f825a6a3e507a822bf1e43[m
+Merge: 930190e 75b7c83
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Fri Jul 5 10:26:30 2024 -0500
+
+    Merge pull request #3 from Ariess202/main
+    
+    Alimentar hola mundo
+
+[33mcommit 75b7c83f6edca9f38d64f4e519ba74b8d7787ad5[m
+Merge: 84c0163 930190e
+Author: Ariess202 <174485800+Ariess202@users.noreply.github.com>
+Date:   Fri Jul 5 10:24:51 2024 -0500
+
+    Merge branch 'WizardCrazy:main' into main
+
+[33mcommit 84c01635784aaee9751b56ef8b5c4499e8eb56e1[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Fri Jul 5 10:24:05 2024 -0500
+
+    Hola mundo alimentar
+
+[33mcommit 930190e19b8a29d66505628da403eb6b1f3906f0[m
+Merge: 0d16238 06f8665
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Fri Jul 5 10:17:04 2024 -0500
+
+    Merge pull request #2 from educhavez25/main
+    
+    Variables intro
+
+[33mcommit 06f8665e25c9c47dfbc330f86adddc071d3e0dd3[m
+Author: Edu Chavez Cruz <educhavez785@gmail.com>
+Date:   Fri Jul 5 10:13:27 2024 -0500
+
+    Variables intro
+
+[33mcommit 09a820593382bff430d07c705097a73f05226106[m
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Fri Jul 5 09:42:37 2024 -0500
+
+    ajuste navs proyecto
+
+[33mcommit 0d1623813c28e9c2e44b704f2ed119b19ed57b38[m
+Merge: 477f119 a6a4c76
+Author: Martin Nicasio <137336531+WizardCrazy@users.noreply.github.com>
+Date:   Fri Jul 5 09:35:23 2024 -0500
+
+    Merge pull request #1 from Ariess202/main
+    
+    Icono UNJFSC
+
+[33mcommit a6a4c766a7542951215f5c31954c4067ef38bfb6[m
+Author: Ariess202 <amjared.bd@gmail.com>
+Date:   Fri Jul 5 09:30:29 2024 -0500
+
+    Icono
+    
+    UNJFSC
+
+[33mcommit 477f1199ebf7ae8bd535b092cb55cc9b575cad0d[m
+Author: WizardCrazy <martinnicasio13@gmail.com>
+Date:   Thu Jul 4 09:48:01 2024 -0500
+
+    Proyecto base - nav 90
