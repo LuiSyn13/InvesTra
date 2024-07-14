@@ -1,6 +1,8 @@
+<?php
+    include("../../controllers/auth.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +19,7 @@
     ?>
     <div class="container">
         <div class="content-info-project">
-            <form action="">
+            <form action="../../controllers/project/p-datosgenerales.php" method="post">
                 <div class="content-form">
                     <table>
                         <tr>
@@ -42,7 +44,7 @@
                         <tr>
                             <td colspan="2">
                                 <textarea name="descripcion_negocio" class="txtArea_desc" 
-                                placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
+                                placeholder="Agrega la descripción"></textarea>
                             </td>
                         </tr>
                     </table>

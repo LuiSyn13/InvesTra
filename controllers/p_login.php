@@ -1,24 +1,32 @@
 <?php  
 session_start();
 include("connection.php");
-$user=$_POST["user"];
-$pass=$_POST["password"];
-$sql="select * from usuario where dni = '$user' and password = '$pass';";
 
-$fila=mysqli_query($cn,$sql);
+if (isset($_POST["user"]) && isset($_POST["password"])) {
+    $user = $_POST["user"];
+    $pass = $_POST["password"];
 
-$r=mysqli_fetch_assoc($fila);
+    $sql = "SELECT * FROM usuario WHERE dni = '$user' AND password = '$pass';";
+    $fila = mysqli_query($cn, $sql);
 
-$valor=$r["dni"];
+    if ($fila) {
+        $r = mysqli_fetch_assoc($fila);
+        $valor = $r["dni"];
 
-if ($valor==null) {
-header('location: ../index.php');
+        if ($valor == null) {
+            header('Location: ../index.php');
+            exit();
+        } else {
+            $_SESSION["user"] = $valor;
+            $_SESSION["auth"] = 1;
+            
+            header('Location: ../views/investigador/inicio.php');
+            exit();
+        }
+    } else {
+        echo "Error en la consulta a la base de datos.";
+    }
 } else {
-$_SESSION["usuario"]=$valor;
-$_SESSION["auth"]=1;
-	
-header('location: ../views/investigador/inicio.php');	
-
+    echo "Por favor, complete los campos de usuario y contraseña.";
 }
-
 ?>

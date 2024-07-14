@@ -1,37 +1,37 @@
 -- TIPO VARIABLE
 
-INSERT INTO tipovariable (idtipovariable, nomtipovariable) VALUES (NULL, 'Dependiente'), (NULL, 'Independiente');
+INSERT INTO tipovariable (nomtipovariable) VALUES ('Dependiente') , ('Independiente');
 
 
 -- TIPO PLANEAMIENTO
 
-INSERT INTO tipoplaneamiento (idtipoplaneamiento, nomtipoplaneamiento) VALUES (NULL, 'General'), (NULL, 'Específico');
+INSERT INTO tipoplaneamiento (nomtipoplaneamiento) VALUES ('General'), ('Específico');
 
 
 -- TIPO APORTE
 
-INSERT INTO tipoaporte (idtipoaporte, nomaporte) VALUES (NULL, 'Sintomas'), (NULL, 'Causas'), (NULL, 'Pronosticos'), (NULL, 'Control Pronosticos');
+INSERT INTO tipoaporte (nomaporte) VALUES ('Sintomas'), ('Causas'), ('Pronosticos'), ('Control Pronosticos');
 
 
 -- TIPO ANTECEDENTE
 
-INSERT INTO tipoantecedente (idtipoantecedente, nomtipoantecedente) VALUES (NULL, 'Internacional'), (NULL, 'Nacional'), (NULL, 'Local');
+INSERT INTO tipoantecedente (nomtipoantecedente) VALUES ('Internacional'), ('Nacional'), ('Local');
 
 
 -- DENOMINACION
 
-INSERT INTO denominacion (iddenominacion, nomdenominacion) VALUES (NULL, 'Est'), (NULL, 'Bach'), (NULL, 'Mag'), (NULL, 'Dr');
+INSERT INTO denominacion (nomdenominacion) VALUES ('Est.'), ('Bach.'), ('Mag.'), ('Dr.');
 
 
 -- CONDICION
 
-INSERT INTO condicion (idcondicion, nomcondicion) VALUES (NULL, 'Alumno'), (NULL, 'Egresado');
+INSERT INTO condicion (nomcondicion) VALUES ('Alumno'), ('Egresado');
 
 
 -- CARRERA
 
-INSERT INTO carrera (idcarrera, nomcarrera) VALUES (NULL, 'Ing. Electronica'), (NULL, 'Ing. de Sistemas'), (NULL, 'Ing. Industrial'), (NULL, 'Ing. Informatica'), (NULL, 'Otro');
+INSERT INTO carrera (nomcarrera) VALUES ('Ing. Electronica'), ('Ing. de Sistemas'), ('Ing. Industrial'), ('Ing. Informatica'), ('Otro');
 
 -- ESPECIALIDAD
 
-INSERT INTO especialidad (idespecialidad, nomespecialidad) VALUES (NULL, Otro)
+INSERT INTO especialidad (nomespecialidad) VALUES ('Otro')
