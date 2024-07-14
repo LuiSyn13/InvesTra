@@ -1,8 +1,8 @@
 <div class="project">
     <a href="../investigador/inicio.php" class="a_home"><img src="../../img/icons_document/home.png" alt=""></a>
     <div class="nav-options-project">
-        <a href="generaldata.php" id="generaldata-link">Datos Generales</a>
-        <a href="al-sintoma.php" id="alimentar-link">Alimentar</a>
+        <a href="generaldata.php">Datos Generales</a>
+        <a href="al-sintoma.php">Alimentar</a>
         <a href="variables.php">Variables</a>
         <a href="cuadro_diagnostico.php">Cuadro de diagnóstico</a>
         <a href="problema.php">Problemas, Objetivos e Hipótesis</a>
