@@ -1,3 +1,3 @@
 <?php
-    mysqli_connect("localhost", "sa", "", "")
+$cn = mysqli_connect("localhost", "root", "", "bdinvestigacion")
 ?>
