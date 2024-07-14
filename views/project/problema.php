@@ -88,8 +88,6 @@
             <p><i>El número de problemas específicos que se guardarán deben ser igual al número de objetivos específicos e hipótesis específicas que se plantearon o se plantearán</i></p>
         </div>
     </div>
-
-</body>
 <script src="../../js/help.js"></script>
 </body>
 </html>

@@ -30,8 +30,7 @@
                             <th>Estado</th>
                             <th>Fecha enviado</th>
                             <th>C. de diagnóstico</th>
-                            <th>Revisar</th>
-                            <th>Enviar</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,8 +40,10 @@
                             <td class="option-date">Pendiente</td>
                             <td>13-07-2024</td>
                             <td class="option-date"><button class="btn btn-view">Visualizar</button></td>
-                            <td class="option-date"><a href="d-revisar.php" class="btn btn-revise">Revisar</a></td>
-                            <td class="option-date"><a href="d-enviar.php" class="btn btn-send">Enviar</a></td>
+                            <td class="option-date">
+                                <a href="d-revisar.php" class="btn btn-revise">Revisar</a>
+                                <a href="d-enviar.php" class="btn btn-send">Enviar</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

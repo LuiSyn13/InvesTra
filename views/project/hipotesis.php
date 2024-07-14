@@ -8,7 +8,7 @@
     <?php
     include("../template/link_head.php");
     ?>
-    <link rel="stylesheet" href="../../css/po_obj_hip.css">
+    <link rel="stylesheet" href="../../css/pro_obj_hip.css">
 </head>
 
 <body>
@@ -72,22 +72,20 @@
     </div>
 
     <div id="myModal2">
-        <div class="modal-content2" id="modalContent">
+        <div class="modal-content" id="modalContent">
             <label style="font-weight: bold;"><i>Guía rápida:</i></label>
             <p><i>Para establecer correctamente la hipótesis del proyecto, esta debe plantearse como una afirmación a la pregunta previamente formulada (Problema General).
                     <br>Lo mismo debe establecerse con las hipótesis específicas y sus correspondientes problemas específicos.</i></p>
         </div>
     </div>
     <div id="myModal3">
-        <div class="modal-content3" id="modalContent">
+        <div class="modal-content" id="modalContent">
             <label style="font-weight: bold;"><i>Guía rápida:</i></label>
             <p><i>Para insertar las hipótesis específicas uno por uno, sepárelos presionando ENTER como se observa en el campo de texto.</i></p>
             <label style="font-weight: bold;"><i>Aclaración:</i></label>
             <p><i>El número de hipótesis específicas que se guardarán deben ser igual al número de problemas específicos y objetivos específicos que se plantearon o se plantearán.</i></p>
         </div>
     </div>
-
-</body>
 <script src="../../js/help.js"></script>
 </body>
 

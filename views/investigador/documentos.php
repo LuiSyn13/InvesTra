@@ -12,7 +12,7 @@
     <div class="container">
         <?php include("../template/principal.php"); ?>
         <div class="content_info">
-            <a href="../generaldata.php" class="a_new_project"><img src="../../img/icons_document/new_project.png"
+            <a href="../project/generaldata.php" class="a_new_project"><img src="../../img/icons_document/new_project.png"
                     class="icon-nav" alt="">Nuevo proyecto</a>
             <br><br>
             <div class="table-container">

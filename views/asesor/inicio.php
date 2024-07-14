@@ -36,7 +36,10 @@
                         ?>
                         <div class="content_msn_projet">
                             <div class="info_msn_project">
+                                <div>
                                 <span class="title_span_msn">Titulo de la investigación</span>
+                                <a href="" style="text-decoration: none; padding: 5px; background: #ffb800;">C. de diagnóstico</a>
+                                </div>
                                 <div>
                                     <span>Julano Menguano</span>
                                     <span>Fecha de envío: 10/07/2024</span>
