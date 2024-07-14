@@ -1,3 +1,6 @@
+<?php
+include("../controllers/connection.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +20,7 @@
             <span>Inves<span class="twoTextLogo">Tra</span></span>
         </div>
         <div class="input-card3"  style="width: 700px">
-        <form action="../views/i-datosesp.php" method="post">
+        <form action="../controllers/verify.php" method="post">
         <table align="center" border="0" style="width: 650px">
         <tr>
             <td colspan="2">
@@ -61,10 +64,16 @@
                 <div class="select">
                     <select name="lstcarrera" required>
                     <option value="" disabled selected>Seleccione su car.</option>
-                    <option value="Ing. Sistemas" >Ing. Sistemas</option>
-                    <option value="Ing. Electronica" >Ing. Electronica</option>
-                    <option value="Ing. Informatica" >Ing. Informatica</option>
-                    <option value="Ing. Industrial" >Ing. Industrial</option>
+                    <?php 
+                    $sqlc = "select * from carrera";
+                    $fila=mysqli_query($cn,$sqlc);
+
+                    while ($r=mysqli_fetch_assoc($fila)) {
+                    ?>
+                    <option value="<?php echo $r["idcarrera"]; ?>"> <?php echo $r["nomcarrera"];?> </option>
+                    <?php
+                    }
+                    ?>
                     </select>
                 </div>
             </div>
@@ -75,8 +84,16 @@
                 <div class="select">
                     <select name="lstcondicion" required>
                     <option value="" disabled selected>Seleccione su con.</option>
-                    <option value="Alumno">Alumno</option>
-                    <option value="Egresado">Egresado</option>
+                    <?php 
+                    $sqlco = "select * from condicion";
+                    $fila=mysqli_query($cn,$sqlco);
+
+                    while ($r=mysqli_fetch_assoc($fila)) {
+                    ?>
+                    <option value="<?php echo $r["idcondicion"]; ?>"> <?php echo $r["nomcondicion"];?> </option>
+                    <?php
+                    }
+                    ?>
                     </select>
                 </div>
             </div>            
@@ -87,10 +104,16 @@
                 <div class="select">
                     <select name="lstdenominacion" required>
                     <option value="" disabled selected>Seleccione su den.</option>
-                    <option value="Est">Est</option>
-                    <option value="Bach">Bach</option>
-                    <option value="MAg">Mag</option>
-                    <option value="Dr">Dr</option>
+                    <?php 
+                    $sqld = "select * from denominacion";
+                    $fila=mysqli_query($cn,$sqld);
+
+                    while ($r=mysqli_fetch_assoc($fila)) {
+                    ?>
+                    <option value="<?php echo $r["iddenominacion"]; ?>"> <?php echo $r["nomdenominacion"];?> </option>
+                    <?php
+                    }
+                    ?>
                     </select>
                 </div>
             </div>            
@@ -98,6 +121,7 @@
         </tr>
         <tr>
             <td align="center" colspan="3">
+                <input type="hidden" name="tipousuario" value="investigador">
                 <input type="submit" class="aceptar fondo" style="width: 50%" value="Aceptar">
             </td>
         </tr>
