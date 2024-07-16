@@ -28,18 +28,53 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php for ($i = 0; $i < 2; $i++) { ?>
+                        <?php
+                        $sql = "SELECT*FROM proyecto WHERE dni = '70982942'";
+                        $fila = mysqli_query($cn, $sql);
+                        while ($r = mysqli_fetch_assoc($fila)) {
+                        ?>
                         <tr>
-                            <td>*Título proyecto A*</td>
-                            <td>*Empresa A*</td>
-                            <td>Completo</td>
+                            <td><?php echo $r["nomproyecto"] ?></td>
+                            <td><?php echo $r["nomempresa"] ?></td>
+                            <td><?php 
+                            
+                            $sqle = "SELECT COUNT(*) as cantidad FROM antecedentes WHERE idproyecto = $r[idproyecto]";
+                            $filae = mysqli_query($cn, $sqle);
+                            $re = mysqli_fetch_assoc($filae);
+                            if ($re['cantidad'] >= '2') {
+                                ?>Completo<?php
+                            } else {
+                                ?>Incompleto<?php
+                            }
+                            ?>
+                            </td>
                             <td>
                                 <a href="#" class="btn btn-view">Ver</a>
                                 <a href="#" class="btn btn-edit">Editar</a>
                                 <a href="#" class="btn btn-delete">Eliminar</a>
                             </td>
                             <td><a href="#" class="btn btn-view">Visualizar</a></td>
-                            <td><a href="#" class="btn btn-send" id="btn-abrir-modal">Enviar</a></td>
+                            <td>
+                                <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto']; ?>">Enviar</a>
+
+                                <div id="modal">
+                                    <h2><center id="modal-nomproyecto"></center></h2>
+                                    <div class="form-group">
+                                        <label for="cboasesor">Asesor:</label>
+                                        <select name="cboasesor" id="cboasesor">
+                                            <option value="" disabled selected>Seleccione al asesor</option>
+                                            <option value="" >Asesor A</option>
+                                            <option value="" >Asesor B</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-buttons">
+                                        <a href="#" class="btn btn-send" style="font-weight: bold; border-radius: 10px">Aceptar</a>
+                                        <a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal">Cancelar</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="modal-background" id="modal-background"></div>
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
@@ -47,25 +82,8 @@
             </div>
         </div>
     </div>
-    <div id="modal">
-        <h2><center>*Titulo del Proyecto A*</center></h2>
-        <p><label>Asesor:   </label><br><br>
-        <select name="cboasesor" id="" style="width: 100%">
-            <option value="" disabled selected>Seleccione al asesor</option>
-            <option value="" >Asesor A</option>
-            <option value="" >Asesor B</option>
-        </select></p>
-        <table align="center">
-        <tr>
-        <td><a href="#" class="btn btn-send" style="font-weight: bold; border-radius: 10px" >Aceptar</a></td>
-        <td width="50%"></td>
-        <td><a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal">Cancelar</a></td>
-        </tr>
-        </table>
-    </div>
-    <div class="modal-background" id="modal-background"></div>
 </body>
 
-<script src="../../js/modal.js"></script>
+<script src="../../js/modal_doc.js"></script>
 
 </html>
