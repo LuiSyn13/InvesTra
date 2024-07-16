@@ -1,3 +1,8 @@
+<?php
+include("../../controllers/auth.php");
+include("../../controllers/connection.php");
+$idProject = $_SESSION["id_project"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 

@@ -1,3 +1,7 @@
+<?php
+    include("../../controllers/auth.php");
+    $idUser = $_SESSION["user"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +16,7 @@
     <div class="container">
         <?php include("../template/principal.php"); ?>
         <div class="content_info">
-            <a href="../project/generaldata.php" class="a_new_project"><img src="../../img/icons_document/new_project.png"
+            <a href="../project/datosgenerales.php" class="a_new_project"><img src="../../img/icons_document/new_project.png"
                     class="icon-nav" alt="">Nuevo proyecto</a>
             <br><br>
             <div class="table-container">
@@ -29,7 +33,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT*FROM proyecto WHERE dni = '70982942'";
+                        $sql = "SELECT*FROM proyecto WHERE dni = '$idUser'";
                         $fila = mysqli_query($cn, $sql);
                         while ($r = mysqli_fetch_assoc($fila)) {
                         ?>
@@ -50,7 +54,7 @@
                             </td>
                             <td>
                                 <a href="#" class="btn btn-view">Ver</a>
-                                <a href="#" class="btn btn-edit">Editar</a>
+                                <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"];?>" class="btn btn-edit">Editar</a>
                                 <a href="#" class="btn btn-delete">Eliminar</a>
                             </td>
                             <td><a href="#" class="btn btn-view">Visualizar</a></td>

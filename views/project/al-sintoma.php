@@ -1,3 +1,8 @@
+<?php
+include("../../controllers/auth.php");
+include("../../controllers/connection.php");
+$idProject = $_SESSION["id_project"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -45,20 +50,27 @@
                 <tr>
                     <td>
                         <br>
-                        <form action="">
+                        <form action="../../controllers/project/p-alimentar.php" method="post">
                             <div class="content-form-alimentar" style="padding: 1.7em; background: white; flex-direction: column;">
                                 <div class="descripcion-container">
                                     <label>Descripcion:</label>
                                     <img src="../../img/ayuda.png" class="icon-nav" id="ayudaImg">
                                 </div>
                                 <br>
-                                <textarea name="txtsintomas" class="txtArea_desc" style="font-size: 15px; background: #EEEEEE" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"></textarea>
+                                <textarea name="txtalimentar" class="txtArea_desc" placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Sintoma 0$i" . "\n"; ?>"><?php
+                                $sqlA = "SELECT*FROM aporte WHERE idproyecto = $idProject AND idtipoaporte = 1";
+                                $filaS = mysqli_query($cn, $sqlA);
+                                while ($r = mysqli_fetch_assoc($filaS)) {
+                                    echo $r["descripcion"]."\n";
+                                }
+                                ?></textarea>
                             </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="btn_gdata_card">
+                            <input type="hidden" name="tipo_aporte" value="1">
                             <input type="submit" value="Aceptar" class="btn_gdata">
                         </div>
                         </form>

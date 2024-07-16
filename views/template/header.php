@@ -1,9 +1,21 @@
 <header>
     <div>
-        <a href="inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
+        <a href="../investigador/inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
     </div>
     <div class="cont_search">
-        <input type="text" class="search_nav" placeholder="Buscar proyecto...">
+        <?php
+            include("../../controllers/connection.php");
+            $idProject = $_SESSION["id_project"];
+            $sql = "SELECT*FROM proyecto WHERE idproyecto = $idProject";
+            $filaProject = mysqli_query($cn, $sql);
+            $dateProject = mysqli_fetch_assoc($filaProject);
+            if($idProject != 0) {
+                $titleProject = $dateProject["nomproyecto"];
+            } else if($idProject == 0) {
+                $titleProject = "";
+            }
+        ?>
+        <input type="text" class="search_nav" placeholder="Buscar proyecto..." value="<?php echo $titleProject;?>">
     </div>
     <div class="icon_opt">
         <img src="../../img/icons_header/notification.png" class="icon-nav">
@@ -15,7 +27,7 @@
         <div class="cont_subuserOff" id="content_subuser">
             <div class="submenu_user">
                 <?php
-                include("../../controllers/connection.php");
+                
                 $sql = "SELECT*FROM investigador WHERE dni = '70982942'";
                 $fila = mysqli_query($cn, $sql);
                 $date = mysqli_fetch_assoc($fila);

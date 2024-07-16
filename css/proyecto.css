@@ -112,6 +112,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: start;
 }
 
 .content-form {
@@ -203,6 +204,12 @@
 .content-form-opalimentar:hover {
     background: #7b7b7b;
     color: white;
+}
+
+.content-form-opalimentar.selected {
+    background: #efbb12;
+    color: white;
+    border-radius: 5px;
 }
 
 .descripcion-container {
