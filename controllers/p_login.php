@@ -19,6 +19,7 @@ if (isset($_POST["user"]) && isset($_POST["password"])) {
         } else {
             $_SESSION["user"] = $valor;
             $_SESSION["auth"] = 1;
+            $_SESSION["id_project"] = 0;
             
             header('Location: ../views/investigador/inicio.php');
             exit();
