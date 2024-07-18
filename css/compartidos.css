@@ -11,14 +11,14 @@
 }
 
 .boton-modal .btn-1:hover{
-    background-color: rgba(255, 0, 0, 0.697);
+    background-color: rgba(255, 0, 0, 0.525);
 }
 
 .boton-modal .btn-2{
     background-color: #00B2FF;
 }
 
-.boton-modal .btn-1:hover{
+.boton-modal .btn-2:hover{
     background-color: #00b3ffb2
 }
 

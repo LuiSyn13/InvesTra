@@ -30,38 +30,38 @@ $idProject = $_SESSION["id_project"];
             <br>
             <br>
             <br>
-            <center>
-                <table border="1" cellspacing="0" style="width: 85%; border-color: lightgrey;">
-                    <tr style="background-color: lightgrey;">
-                        <td align="center">Título</td>
-                        <td align="center">Asesor</td>
-                        <td align="center">Estado</td>
-                        <td align="center">F. de envío</td>
-                        <td align="center">F. de revisión</td>
-                        <td align="center">Opciones</td>
-                    </tr>
-                    <tr>
-                        <td>Título de la investigación</td>
-                        <td>Nombre del Asesor</td>
-                        <td>
-                            <?php
-                            $estado = "Revisado";
-                            echo $estado;
-                            ?>
-                        </td>
-                        <td>Fecha en la cual fue enviada</td>
-                        <td>Fecha en la cual fue revisada</td>
-                        <td>
-                            <?php
-                            if ($estado == "Pendiente") {
-                                $button = "Cancelar envío";
-                            ?>
-                                <br>
-                                <div class="boton-modal">
-                                    <center>
-                                        <label for="btn-modal" class="btn-1"><?php echo $button; ?></label>
-                                    </center>
-                                </div>
+                    <center>
+                        <table border="1" cellspacing="0" style="width: 85%; border-color: lightgrey;">
+                            <tr style="background-color: lightgrey;">
+                                <td align="center">Título</td>
+                                <td align="center">Asesor</td>
+                                <td align="center">Estado</td>
+                                <td align="center">F. de envío</td>
+                                <td align="center">F. de revisión</td>
+                                <td align="center">Opciones</td>
+                            </tr>
+                            <tr>
+                                <td>Título de la investigación</td>
+                                <td>Nombre del Asesor</td>
+                                <td>
+                                    <?php 
+                                        $estado = "Pendiente";
+                                        echo $estado; 
+                                    ?>
+                                </td>
+                                <td>Fecha en la cual fue enviada</td>
+                                <td>Fecha en la cual fue revisada</td>
+                                <td>
+                                    <?php                                    
+                                        if($estado == "Pendiente"){
+                                            $button = "Cancelar envío";
+                                    ?>
+                                    <br>
+                                    <div class="boton-modal">
+                                        <center>
+                                            <label for="btn-modal" class="btn-1"><?php echo $button; ?></label>
+                                        </center>
+                                    </div>
 
                                 <input type="checkbox" id="btn-modal">
                                 <div class="container-modal">
