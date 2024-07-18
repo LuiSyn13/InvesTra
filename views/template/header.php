@@ -4,44 +4,48 @@
     </div>
     <div class="cont_search">
         <?php
-            include("../../controllers/connection.php");
-            $idProject = $_SESSION["id_project"];
-            $sql = "SELECT*FROM proyecto WHERE idproyecto = $idProject";
-            $filaProject = mysqli_query($cn, $sql);
-            $dateProject = mysqli_fetch_assoc($filaProject);
-            if($idProject != 0) {
-                $titleProject = $dateProject["nomproyecto"];
-            } else if($idProject == 0) {
-                $titleProject = "";
-            }
+        include("../../controllers/connection.php");
+        $idProject = $_SESSION["id_project"];
+        $sql = "SELECT*FROM proyecto WHERE idproyecto = $idProject";
+        $filaProject = mysqli_query($cn, $sql);
+        $dateProject = mysqli_fetch_assoc($filaProject);
+        if ($idProject != 0) {
+            $titleProject = $dateProject["nomproyecto"];
+        } else if ($idProject == 0) {
+            $titleProject = "";
+        }
+
+        $idUser = $_SESSION["user"];
+        $tuser = $_SESSION["tuser"];
         ?>
-        <input type="text" class="search_nav" placeholder="Buscar proyecto..." value="<?php echo $titleProject;?>">
+        <input type="text" class="search_nav" placeholder="Buscar proyecto..." value="<?php echo $tuser; ?>">
     </div>
     <div class="icon_opt">
         <img src="../../img/icons_header/notification.png" class="icon-nav">
     </div>
     <div class="user_nav">
+        <?php
+        $sql = "SELECT*FROM $tuser WHERE dni = '$idUser'";
+        $fila = mysqli_query($cn, $sql);
+        $date = mysqli_fetch_assoc($fila);
+        $info_date = $date["nombre"] . ' ' . $date["apaterno"] . ' ' . $date["amaterno"];
+        $len = strlen($info_date);
+        if ($len > 20) {
+            $dateUser = substr($info_date, 0, 17) . '...';
+        } else {
+            $dateUser = $info_date;
+        }
+        $fnome = $date["nombre"][0];
+        $fape = $date["apaterno"][0];
+        ?>
         <div class="user_icon" id="user_icon">
-            <span class="icon_user_txt">MN</span>
+            <span class="icon_user_txt"><?php echo $fnome.$fape;?></span>
         </div>
         <div class="cont_subuserOff" id="content_subuser">
             <div class="submenu_user">
-                <?php
-                
-                $sql = "SELECT*FROM investigador WHERE dni = '70982942'";
-                $fila = mysqli_query($cn, $sql);
-                $date = mysqli_fetch_assoc($fila);
-                $info_date = $date["nombre"] . ' ' . $date["apaterno"] . ' ' . $date["amaterno"];
-                $len = strlen($info_date);
-                if($len > 20) {
-                    $dateUser = substr($info_date, 0, 17).'...';
-                } else {
-                    $dateUser = $info_date;
-                }
-                ?>
                 <div class="date_per_user">
                     <div class="user_icon" id="user_icon">
-                        <a href="fotoperfil.php" class="icon_user_txt">MN</a>
+                        <a href="fotoperfil.php" class="icon_user_txt"><?php echo $fnome.$fape; ?></a>
                     </div>
                     <div class="info_user">
                         <span class="info_user_txt"><?php echo $dateUser; ?></span>

@@ -43,8 +43,10 @@
 
     } elseif ($cnt < $sum) {
         echo "Has mas registro en textArea, se va a crear $dif registros";
-        $sqlIns = "INSERT INTO aporte (idtipoaporte, descripcion, idproyecto) VALUES ($tipo_aporte, 'null', $idProject)";
-        mysqli_query($cn, $sqlIns);
+        while($dif--) {
+            $sqlIns = "INSERT INTO aporte (idtipoaporte, descripcion, idproyecto) VALUES ($tipo_aporte, '', $idProject)";
+            mysqli_query($cn, $sqlIns);
+        }
         
         $tQuery = "edit";
     } elseif($cnt == $sum) {
@@ -77,4 +79,5 @@
             }
     }
     mysqli_close($cn);
+    header("Location: ../../views/project/alimentar.php?tpo=$tipo_aporte")
 ?>
