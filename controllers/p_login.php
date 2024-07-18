@@ -20,13 +20,24 @@ if (isset($_POST["user"]) && isset($_POST["password"])) {
             $_SESSION["user"] = $valor;
             $_SESSION["auth"] = 1;
             $_SESSION["id_project"] = 0;
+
+            $sqli = "SELECT * FROM investigador WHERE dni = '$user';";
+            $filai = mysqli_query($cn, $sqli);
+            $ri = mysqli_fetch_assoc($filai);
             
-            if($r["tipousuario"] == 0){
+            if(isset($ri["dni"])){
                 $_SESSION["tuser"] = "investigador";
                 header('Location: ../views/investigador/inicio.php');
-            } else {
-                $_SESSION["tuser"] = "asesor";
-                header('Location: ../views/asesor/inicio.php');
+            } else{
+                /*$sqla = "SELECT * FROM asesor WHERE dni = '$user';";
+                $filaa = mysqli_query($cn, $sqla);
+                $ra = mysqli_fetch_assoc($filaa);
+                if (isset($ra["dni"])){*/
+                    $_SESSION["tuser"] = "asesor";
+                    header('Location: ../views/asesor/inicio.php');
+                /*} else {
+                    echo "Ha ocurrido un error. La cuenta no está registrada correctamente.";
+                }*/
             }
             
             exit();

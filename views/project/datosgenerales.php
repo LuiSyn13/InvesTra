@@ -3,7 +3,6 @@ include("../../controllers/auth.php");
 include("../../controllers/connection.php");
 $idUser = $_SESSION["user"];
 $idProject = $_SESSION["id_project"];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +23,7 @@ $idProject = $_SESSION["id_project"];
     ?>
     <div class="container">
         <div class="content-info-project">
-            <form action="../../controllers/project/p-datosgenerales.php" method="post">
+            <form id="dataForm" action="../../controllers/project/p-datosgenerales.php" method="post">
                 <div class="content-form">
                     <?php
                     if ($idProject != 0) {
@@ -85,11 +84,19 @@ $idProject = $_SESSION["id_project"];
                 <div class="btn_gdata_card">
                     <input type="hidden" name="tipo_consulta" value="<?php echo $tQuery; ?>">
                     <input type="hidden" name="id_proyecto" value="<?php echo $idProject; ?>">
-                    <input type="submit" value="Aceptar" class="btn_gdata">
+                    <input type="button" id="acceptButton" value="Aceptar" class="btn_gdata">
                 </div>
             </form>
         </div>
     </div>
+
+    <div id="confirmationModal" class="modal-confirm">
+        <div class="modal-content-confirm">
+            <h3><p><b>Guardado exitoso</b></p></h3>
+            <p><img src="../../img/icons_register/registrado.png" alt="" width="90px"></p>
+        </div>
+    </div>
 </body>
+<script src="../../js/modal-confirm.js"></script>
 
 </html>

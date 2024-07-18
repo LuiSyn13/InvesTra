@@ -36,7 +36,7 @@ switch ($tipo) {
                 values ('$dni', '$nom', '$pat', '$mat', '$car', '$cond', '$denom')";
         break;
     case 'asesor':
-        $sqli="insert into asesor (dni, dina, nombres, apaterno, amaterno, idespecialidad) 
+        $sqli="insert into asesor (dni, dina, nombre, apaterno, amaterno, idespecialidad) 
                 values ('$dni', '$dina', '$nom', '$pat', '$mat', '$esp')";
         break;
 }
@@ -53,7 +53,7 @@ function generapass(){
 
     $password = "";
 
-    for ($i=0; $i < 10 ; $i++) { 
+    for ($i=0; $i < 8 ; $i++) { 
         $password = $password.substr($plantilla, rand(1,36), 1);
     }
 

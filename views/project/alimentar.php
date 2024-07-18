@@ -12,6 +12,7 @@ $idProject = $_SESSION["id_project"];
     <?php
     include("../template/link_head.php");
     ?>
+    <link rel="stylesheet" href="../../css/alimentar.css">
 </head>
 <body>
     <?php
@@ -65,7 +66,7 @@ $idProject = $_SESSION["id_project"];
                             }
                             echo "Tipo de aporte seleccionado: " . $tAporte;
                         ?>
-                        <form action="../../controllers/project/p-alimentar.php" method="post">
+                        <form id="dataForm" action="../../controllers/project/p-alimentar.php" method="post">
                             <div class="content-form-alimentar" style="padding: 1.7em; background: white; flex-direction: column;">
                                 <div class="descripcion-container">
                                     <label>Descripcion:</label>
@@ -86,7 +87,7 @@ $idProject = $_SESSION["id_project"];
                     <td>
                         <div class="btn_gdata_card">
                             <input type="hidden" name="tipo_aporte" value="<?php echo $tAporte;?>">
-                            <input type="submit" value="Aceptar" class="btn_gdata">
+                            <input type="button" id="acceptButton" value="Aceptar" class="btn_gdata">
                         </div>
                         </form>
                     </td>
@@ -99,7 +100,16 @@ $idProject = $_SESSION["id_project"];
                 <p><i>Para insertar las causas uno por uno, separelos presionando ENTER como se observa en el campo de texto.</i></p>
             </div>
         </div>
-        <script src="../../js/help.js"></script>
-</body>
 
+        <div id="confirmationModal" class="modal-confirm">
+            <div class="modal-content-confirm">
+                <h3><p><b>Guardado exitoso</b></p></h3>
+                <p><img src="../../img/icons_register/registrado.png" alt="" width="90px"></p>
+            </div>
+        </div>
+
+        <script src="../../js/help.js"></script>
+        
+        <script src="../../js/modal-confirm.js"></script>
+</body>
 </html>

@@ -21,7 +21,7 @@ $idProject = $_SESSION["id_project"];
     ?>
     <div class="container">
         <div class="content-info-project">
-            <form action="">
+            <form id="dataForm" action="">
                 <div class="content-form">
                     <table>
                         <tr>
@@ -64,9 +64,18 @@ $idProject = $_SESSION["id_project"];
                 </div>
                 <br>
                 <center>
-                    <input type="submit" value="Aceptar" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
+                    <input type="button" id="acceptButton" value="Aceptar" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
                 </center>
             </form>
         </div>
+    </div>
+
+    <div id="confirmationModal" class="modal-confirm">
+        <div class="modal-content-confirm">
+            <h3><p><b>Guardado exitoso</b></p></h3>
+            <p><img src="../../img/icons_register/registrado.png" alt="" width="90px"></p>
+        </div>
+    </div>
 </body>
+<script src="../../js/modal-confirm.js"></script>
 </html>
