@@ -16,11 +16,19 @@ if (isset($_POST["user"]) && isset($_POST["password"])) {
         if ($valor == null) {
             header('Location: ../index.php');
             exit();
-        } else {
+        } else {         
             $_SESSION["user"] = $valor;
             $_SESSION["auth"] = 1;
+            $_SESSION["id_project"] = 0;
             
-            header('Location: ../views/investigador/inicio.php');
+            if($r["tipousuario"] == 0){
+                $_SESSION["tuser"] = "investigador";
+                header('Location: ../views/investigador/inicio.php');
+            } else {
+                $_SESSION["tuser"] = "asesor";
+                header('Location: ../views/asesor/inicio.php');
+            }
+            
             exit();
         }
     } else {

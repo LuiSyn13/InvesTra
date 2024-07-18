@@ -1,3 +1,6 @@
+<?php
+    include("../../controllers/auth.php")
+?>
 <!DOCTYPE html>
 <html lang="es">
 

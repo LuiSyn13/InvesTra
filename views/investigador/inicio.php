@@ -1,3 +1,6 @@
+<?php
+    include("../../controllers/auth.php")
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,7 +22,7 @@
         include("../template/principal.php")
         ?>
         <div class="content_info">
-            <a href="../project/generaldata.php" class="a_new_project"><img src="../../img/icons_document/new_project.png" class="icon-nav" alt=""> Nuevo proyecto</a>
+            <a href="../project/datosgenerales.php" class="a_new_project"><img src="../../img/icons_document/new_project.png" class="icon-nav" alt=""> Nuevo proyecto</a>
             
         </div>
     </div>

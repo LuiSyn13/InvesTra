@@ -1,18 +1,34 @@
 <?php
-    include("../../controllers/auth.php");
-    include("../../controllers/connection.php");
-    $idUser = $_SESSION["user"];
+include("../../controllers/auth.php");
+include("../../controllers/connection.php");
+$idUser = $_SESSION["user"];
 
-    $nombre_proyecto = $_POST["nombre_proyecto"];
-    $nombre_empresa = $_POST["nombre_empresa"];
-    $direccion_empresa = $_POST["direccion_empresa"];
-    $fecha_inicio = $_POST["fecha_inicio"];
-    $fecha_fin = $_POST["fecha_fin"];
-    $descripcion_negocio = $_POST["descripcion_negocio"];
+$nomPro = $_POST["nombre_proyecto"];
+$nomEmp = $_POST["nombre_empresa"];
+$dirEmp = $_POST["direccion_empresa"];
+$fInicio = $_POST["fecha_inicio"];
+$fFin = $_POST["fecha_fin"];
+$descNeg = $_POST["descripcion_negocio"];
 
-    $sql = "INSERT INTO proyecto (dni, nomproyecto, nomempresa, direccion, periodo, descripcion, fechacreacion)
-            VALUES ('$idUser', '$nombre_proyecto', '$nombre_empresa', '$direccion_empresa','$fecha_inicio - $fecha_fin', '$descripcion_negocio', '14-07-2024')";
-    mysqli_query($cn, $sql);
-    mysqli_close($cn);
-    echo $idUser.' '.$nombre_proyecto;
+/* Datos para ajuste */
+$tConsulta = $_POST["tipo_consulta"];
+$idProyecto = $_POST["id_proyecto"];
+$fAct = date("Y-m-d H:i:s");
+switch ($tConsulta) {
+    case "new":
+        $sql = "INSERT INTO proyecto (dni, nomproyecto, nomempresa, direccion, periodo, descripcion, fechacreacion)
+            VALUES ('$idUser', '$nomPro', '$nomEmp', '$dirEmp','$fInicio - $fFin', '$descNeg', '$fAct')";
+        break;
+
+    case "edit":
+        $sql = "UPDATE proyecto
+            SET nomproyecto = '$nomPro', nomempresa = '$nomEmp', direccion = '$dirEmp', periodo ='$fInicio - $fFin', descripcion = '$descNeg', fechamodificacion = '$fAct'
+            WHERE idproyecto = $idProyecto";
+        break;
+}
+
+mysqli_query($cn, $sql);
+mysqli_close($cn);
+
+header("Location: ../../views/project/datosgenerales.php");
 ?>
