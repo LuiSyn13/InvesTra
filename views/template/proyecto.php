@@ -13,7 +13,7 @@
     </div>
     <div class="options-export-off" id="submenu-export">
         <div class="sub_export">
-            <a href="#">Descargar</a>
+            <a href="descargar.php">Descargar</a>
             <a href="#">Compartir</a>
         </div>
     </div>

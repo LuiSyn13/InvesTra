@@ -40,7 +40,7 @@
                                 <td>Nombre del Asesor</td>
                                 <td>
                                     <?php 
-                                        $estado = "Revisado";
+                                        $estado = "Pendiente";
                                         echo $estado; 
                                     ?>
                                 </td>
