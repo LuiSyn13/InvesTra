@@ -1,13 +1,20 @@
-body {
+body {      
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    width: 80%;
+    max-width: 900px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar {
@@ -53,10 +60,10 @@ body {
 }
 
 .main-content {
-    flex: 1;
-    padding: 40px;
+ flex: 1;
+padding: 40px;
+max-width: 600px;
 }
-
 .main-content h1 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -65,11 +72,11 @@ body {
 
 .form-group {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
 .form-group label {
-    width: 200px;
+    width: 100px;
     text-align: right;
     padding-right: 10px;
     font-size: 16px;
@@ -82,6 +89,7 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    max-width: 350px; /* Ajustar este valor según tus necesidades */
 }
 
 .form-group input[type="text"] {
@@ -95,13 +103,13 @@ body {
 }
 
 .form-group select option {
-    color: black;
+    color: white;
 }
 
 .btn-save {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     background-color: limegreen;
     border: none;
