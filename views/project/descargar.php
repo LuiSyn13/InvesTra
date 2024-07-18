@@ -1,6 +1,8 @@
 <?php
 include("../../controllers/connection.php");
 require('../../fpdf/fpdf.php');
+include("../../controllers/auth.php");
+$idUser = $_SESSION["user"];
 
 class PDF extends FPDF {
     // Pie de página
@@ -57,7 +59,7 @@ $sql = "SELECT p.*, i.*, c.*
         FROM proyecto p, investigador i, carrera c 
         WHERE p.dni = i.dni
         AND i.idcarrera = c.idcarrera 
-        AND p.dni='73314943';";
+        AND p.dni='$idUser';";
 $fila = mysqli_query($cn, $sql);
 $r = mysqli_fetch_assoc($fila);
 
@@ -97,7 +99,7 @@ $pdf->MultiCell(0, 10, 'Estudiante:', 0, 'C');
 $pdf->SetFont('Times', '', 16);
 $pdf->MultiCell(0, 10, utf8_decode($r["nombre"]." ".$r["apaterno"]." ".$r["amaterno"]), 0, 'C');
 
-$pdf->Ln(25);
+$pdf->Ln(15);
 
 $pdf->SetFont('Times', 'B', 16);
 $pdf->MultiCell(0, 10, utf8_decode('HUACHO - PERÚ'), 0, 'C');
