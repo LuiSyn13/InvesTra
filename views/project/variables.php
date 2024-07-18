@@ -22,7 +22,7 @@ $idProject = $_SESSION["id_project"];
     ?>
     <div class="container">
         <div class="content-info-project">
-            <form action="../../controllers/project/p-variables.php" method="post">
+            <form id="dataForm" action="../../controllers/project/p-variables.php" method="post">
                 <div class="content-form">
                     <table>
                         <tr>
@@ -98,10 +98,19 @@ $idProject = $_SESSION["id_project"];
                 </div>
                 <br>
                 <center>
-                    <input class="btn_gdata" type="submit" value="Aceptar">
+                    <input class="btn_gdata" type="button" id="acceptButton" value="Aceptar">
                 </center>
             </form>
         </div>
+    </div>
+
+    <div id="confirmationModal" class="modal-confirm">
+        <div class="modal-content-confirm">
+            <h3><p><b>Guardado exitoso</b></p></h3>
+            <p><img src="../../img/icons_register/registrado.png" alt="" width="90px"></p>
+        </div>
+    </div>
 </body>
 
+<script src="../../js/modal-confirm.js"></script>
 </html>

@@ -117,7 +117,7 @@ $idProject = $_SESSION["id_project"];
                     <td>
                         <div class="btn_gdata_card">
                             <input type="hidden" name="tipo_aporte" value="<?php echo $tAporte;?>">
-                            <input type="submit" value="Aceptar" class="btn_gdata">
+                            <input type="submit"value="Aceptar" class="btn_gdata">
                         </div>
                         </form>
                     </td>
@@ -142,6 +142,6 @@ $idProject = $_SESSION["id_project"];
         </div>
     </div>
     <script src="../../js/help.js"></script>
-</body>
 
+</body>
 </html>
