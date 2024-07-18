@@ -4,41 +4,53 @@
     $idUser = $_SESSION["user"];
     $tuser = $_SESSION["tuser"];
 
-    $nombre = $_POST["nombre"];
-    $paterno = $_POST["apellido-paterno"];
-    $materno = $_POST["apellido-materno"];
+    $tipo = $_POST["tipo"];
 
-    switch ($tuser) {
-        case 'asesor':
-            $dina = $_POST["dina"];
-            $especialidad = $_POST["Especialidad"];
+    switch ($tipo) {
+        case 1:
+            $nombre = $_POST["nombre"];
+            $paterno = $_POST["apellido-paterno"];
+            $materno = $_POST["apellido-materno"];
 
-            $sql="UPDATE $tuser SET dina = '$dina', nombre = '$nombre', apaterno = '$paterno', 
-                        amaterno = '$materno', idespecialidad = '$especialidad'
-                    WHERE dni = '$idUser';";
+            switch ($tuser) {
+                case 'asesor':
+                    $dina = $_POST["dina"];
+                    $especialidad = $_POST["Especialidad"];
 
-            mysqli_query($cn,$sql);
-            mysqli_close($cn);
+                    $sql="UPDATE $tuser SET dina = '$dina', nombre = '$nombre', apaterno = '$paterno', 
+                                amaterno = '$materno', idespecialidad = '$especialidad'
+                            WHERE dni = '$idUser';";
 
-            header("location: ../views/investigador/datos_personales.php");
+                    break;
+                
+                case 'investigador':
+                    $carrera = $_POST["carrera"];
+                    $condicion = $_POST["condicion"];
+                    $denominacion = $_POST["denominacion"];
 
+                    $sql="UPDATE $tuser SET nombre = '$nombre', apaterno = '$paterno', amaterno = '$materno', idcarrera = '$carrera',
+                                idcondicion = '$condicion', iddenominacion = '$denominacion' 
+                            WHERE dni = '$idUser';";
+
+                    break;
+                    
+            }
             break;
         
-        case 'investigador':
-            $carrera = $_POST["carrera"];
-            $condicion = $_POST["condicion"];
-            $denominacion = $_POST["denominacion"];
+        case 2:
+            $celular = $_POST["celular"];
+            $correo = $_POST["correo"];
+            $direccion = $_POST["direccion"];
 
-            $sql="UPDATE $tuser SET nombre = '$nombre', apaterno = '$paterno', amaterno = '$materno', idcarrera = '$carrera',
-                        idcondicion = '$condicion', iddenominacion = '$denominacion' 
+            $sql="UPDATE datosespecificos SET celular = '$celular', correo = '$correo', direccion = '$direccion'
                     WHERE dni = '$idUser';";
 
-            mysqli_query($cn,$sql);
-            mysqli_close($cn);
-
-            header("location: ../views/investigador/datos_personales.php");
-
             break;
-            
     }
+
+    mysqli_query($cn,$sql);
+    mysqli_close($cn);
+
+    header("location: ../views/investigador/datos_personales.php?tpo=$tipo");
+
 ?>
