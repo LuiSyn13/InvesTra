@@ -58,13 +58,13 @@ $idProject = $_SESSION["id_project"];
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="" id="" style="width: 95%">
+                                        <input type="text" name="autor" id="" style="width: 95%">
                                     </td>
                                     <td colspan="2">
-                                        <input type="text" name="" id="" style="width: 95%">
+                                        <input type="text" name="" id="titulo" style="width: 95%">
                                     </td>
                                     <td>
-                                        <input type="date" name="" id="" style="width: 95%">
+                                        <input type="date" name="" id="año" style="width: 95%">
                                     </td>
                                 </tr>
                                 <tr>
@@ -75,10 +75,13 @@ $idProject = $_SESSION["id_project"];
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="" id="" style="width: 100%">
+                                        <select name="grtitulo" id="" style="width: 100%">
                                             <option value="" disabled selected>
                                                 Seleccione el grado o título
                                             </option>
+                                            <option value="Licenciado">Licenciado</option>
+                                            <option value="Magister">Magister</option>
+                                            <option value="Doctor">Doctor</option>
                                         </select>
                                     </td>
                                     <td>

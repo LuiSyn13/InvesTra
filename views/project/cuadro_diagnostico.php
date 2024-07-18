@@ -13,6 +13,7 @@ $idProject = $_SESSION["id_project"];
     <?php
     include("../template/link_head.php");
     ?>
+    <link rel="stylesheet" href="../../css/cuadro_diagnostico.css">
 </head>
 
 <body>
@@ -20,51 +21,70 @@ $idProject = $_SESSION["id_project"];
     include("../template/header.php");
     include("../template/proyecto.php");
     ?>
-
     <div class="container">
         <div class="content-info-project">
             <div class="table-container">
-
                 <table>
-                    <tr>
-                        <th style="background: #d3d3d3; color: black" height="50">
-                            <center>Síntomas</center>
-                        </th>
-                        <th style="background: #d3d3d3; color: black">
-                            <center>Causas</center>
-                        </th>
-                        <th style="background: #d3d3d3; color: black">
-                            <center>Pronóstico</center>
-                        </th>
-                        <th style="background: #d3d3d3; color: black">
-                            <center>Control de pronóstico</center>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="descripcion-container">
-                            </div>
-                            <textarea name="sintomas" class="txtArea_desc" placeholder="Sintoma 1&#10;Sintoma 2&#10;Sintoma 3&#10;Sintoma 4"></textarea>
-                        </td>
-                        <td>
-                            <div class="descripcion-container">
-
-                            </div>
-                            <textarea name="causas" class="txtArea_desc" placeholder="Causa 1&#10;Causa 2&#10;Causa 3&#10;Causa 4"></textarea>
-                        </td>
-                        <td>
-                            <div class="descripcion-container">
-
-                            </div>
-                            <textarea name="pronostico" class="txtArea_desc" placeholder="Ingrese el pronóstico aquí..."></textarea>
-                        </td>
-                        <td>
-                            <div class="descripcion-container">
-
-                            </div>
-                            <textarea name="control" class="txtArea_desc" placeholder="Ingrese el control aquí..."></textarea>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Síntomas</th>
+                            <th>Causas</th>
+                            <th>Pronóstico</th>
+                            <th>Control de Pronóstico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <textarea name="sintomas" class="textArea" 
+                                placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Síntoma 0$i" . "\n"; ?>"><?php
+                                    $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                    $fila = mysqli_query($cn, $sql);
+                                    while($r = mysqli_fetch_assoc($fila)) {
+                                        if($r["idtipoaporte"] == 1) {
+                                            echo "- ".$r["descripcion"]."\n";
+                                        }
+                                    }
+                                ?></textarea>
+                            </td>
+                            <td>
+                                <textarea name="causas" class="textArea" 
+                                placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Causas 0$i" . "\n"; ?>"><?php
+                                    $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                    $fila = mysqli_query($cn, $sql);
+                                    while($r = mysqli_fetch_assoc($fila)) {
+                                        if($r["idtipoaporte"] == 2) {
+                                            echo "- ".$r["descripcion"]."\n";
+                                        }
+                                    }
+                                ?></textarea>
+                            </td>
+                            <td>
+                                <textarea name="pronostico" class="textArea" 
+                                placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Pronóstico 0$i" . "\n"; ?>"><?php
+                                    $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                    $fila = mysqli_query($cn, $sql);
+                                    while($r = mysqli_fetch_assoc($fila)) {
+                                        if($r["idtipoaporte"] == 3) {
+                                            echo "- ".$r["descripcion"]."\n";
+                                        }
+                                    }
+                                ?></textarea>
+                            </td>
+                            <td>
+                                <textarea name="control" class="textArea" 
+                                placeholder="<?php for ($i = 1; $i <= 9; $i++) echo "Control de pronóstico 0$i" . "\n"; ?>"><?php
+                                    $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                    $fila = mysqli_query($cn, $sql);
+                                    while($r = mysqli_fetch_assoc($fila)) {
+                                        if($r["idtipoaporte"] == 4) {
+                                            echo "- ".$r["descripcion"]."\n";
+                                        }
+                                    }
+                                ?></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 </fieldset>
                 <div class="btn_gdata_card">
