@@ -57,7 +57,7 @@ $sql = "SELECT p.*, i.*, c.*
         FROM proyecto p, investigador i, carrera c 
         WHERE p.dni = i.dni
         AND i.idcarrera = c.idcarrera 
-        AND p.dni='73314943';";
+        AND p.dni='70982942';";
 $fila = mysqli_query($cn, $sql);
 $r = mysqli_fetch_assoc($fila);
 
