@@ -27,8 +27,7 @@
             break;
         case 2:
             $sqlCount = "SELECT COUNT(*) as res FROM problema pr INNER JOIN objetivo ob ON pr.idproblema = ob.idproblema 
-                            WHERE pr.idproyecto = $idProject AND ob.idtipoplaneamiento = 1";
-            
+                            WHERE pr.idproyecto = $idProject AND ob.idtipoplaneamiento = 1";            
             break;
         case 3:
             $sqlCount = "SELECT COUNT(*) as res FROM problema pr INNER JOIN objetivo ob ON pr.idproblema = ob.idproblema 

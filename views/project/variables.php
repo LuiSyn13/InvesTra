@@ -5,6 +5,7 @@ $idProject = $_SESSION["id_project"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,31 +14,47 @@ $idProject = $_SESSION["id_project"];
     include("../template/link_head.php");
     ?>
 </head>
+
 <body>
-    <br><br>
     <?php
     include("../template/header.php");
     include("../template/proyecto.php");
     ?>
     <div class="container">
         <div class="content-info-project">
-            <form id="dataForm" action="">
+            <form id="dataForm" action="../../controllers/project/p-variables.php" method="post">
                 <div class="content-form">
                     <table>
                         <tr>
                             <td width="400" align="center" style="font-size: 23px; font-weight: bold;">Síntomas</td>
-                            <td width="200"></td>
+                            <td width="50"></td>
                             <td width="400" align="center" style="font-size: 23px; font-weight: bold;">Causas</td>
                         </tr>
                         <tr>
                             <td align="center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Sintoma $i"."\n"?>" readonly></textarea>
+                                <textarea class="txtArea_desc" name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; outline: none; cursor: auto;" placeholder="<?php for ($i = 1; $i <= 4; $i++) echo "Sintoma $i" . "\n" ?>" readonly><?php
+                                                                                                                                                                                                                                                                $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                                                                                                                                                                                                                                                $fila = mysqli_query($cn, $sql);
+                                                                                                                                                                                                                                                                while ($r = mysqli_fetch_assoc($fila)) {
+                                                                                                                                                                                                                                                                    if ($r["idtipoaporte"] == 1) {
+                                                                                                                                                                                                                                                                        echo "- " . $r["descripcion"] . "\n";
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                ?></textarea>
                             </td>
                             <td></td>
                             <td align="Center" rowspan="3">
                                 <br>
-                                <textarea name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; background-color: lightgrey; outline: none; cursor: auto;" placeholder="<?php for ($i=1; $i <= 4; $i++) echo "Causa $i"."\n"?>" readonly></textarea>
+                                <textarea class="txtArea_desc" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; outline: none; cursor: auto;" placeholder="<?php for ($i = 1; $i <= 4; $i++) echo "Causa $i" . "\n" ?>" readonly><?php
+                                                                                                                                                                                                                                                        $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                                                                                                                                                                                                                                                        $fila = mysqli_query($cn, $sql);
+                                                                                                                                                                                                                                                        while ($r = mysqli_fetch_assoc($fila)) {
+                                                                                                                                                                                                                                                            if ($r["idtipoaporte"] == 2) {
+                                                                                                                                                                                                                                                                echo "- " . $r["descripcion"] . "\n";
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                        ?></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -47,24 +64,41 @@ $idProject = $_SESSION["id_project"];
                             <td></td>
                         </tr>
                         <tr>
-                            <td align="center" style="font-size: 17px; font-weight: bold;"><br><br><br>VARIABLE DEPENDIENTE (Y)</td>
+                            <td align="center" style="font-size: 17px; font-weight: bold;"><br>VARIABLE DEPENDIENTE (Y)</td>
                             <td></td>
-                            <td align="center" style="font-size: 17px; font-weight: bold;"><br><br><br>VARIABLE INDEPENDIENTE (X)</td>
+                            <td align="center" style="font-size: 17px; font-weight: bold;"><br>VARIABLE INDEPENDIENTE (X)</td>
                         </tr>
                         <tr>
+                            <?php
+                            $sqlVar = "SELECT * FROM variable va INNER JOIN tipovariable tv ON va.idtipovariable = tv.idtipovariable WHERE idproyecto = $idProject
+                                            ORDER BY tv.nomtipovariable ASC";
+                            $filaVar = mysqli_query($cn, $sqlVar);
+                            $array = array();
+                            $descDep = "";
+                            $descInd = "";
+                            if (isset($filaVar)) {
+                                while ($r = mysqli_fetch_assoc($filaVar)) {
+                                    if (isset($r["nomtipovariable"])) {
+                                        $array[] = $r["descripcion"];
+                                    }                                    
+                                }
+                                $descDep = $array[0];
+                                $descInd = $array[1];
+                            }
+                            ?>
                             <td align="center">
-                                <br><input type="text" name="" id="" style="width: 100%; height: 35px; border-radius: 8px; background-color: lightgrey;">
+                                <br><input type="text" name="var_dep" placeholder="Variable dependiente..." required class="inp_var" value="<?php echo $descDep; ?>">
                             </td>
                             <td></td>
                             <td align="center">
-                                <br><input type="text" name="" id="" style="width: 100%; height: 35px; border-radius: 8px; background-color: lightgrey;">
+                                <br><input type="text" name="var_indep" placeholder="Variable independiente..." required class="inp_var" value="<?php echo $descInd; ?>">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <br>
                 <center>
-                    <input type="button" id="acceptButton" value="Aceptar" style="font-size: 20px; background-color: #14FF00; border-radius: 7px; padding: 7px 12px; font-weight: bold; cursor: pointer; border: none;">
+                    <input class="btn_gdata" type="button" id="acceptButton" value="Aceptar">
                 </center>
             </form>
         </div>
@@ -77,5 +111,6 @@ $idProject = $_SESSION["id_project"];
         </div>
     </div>
 </body>
+
 <script src="../../js/modal-confirm.js"></script>
 </html>

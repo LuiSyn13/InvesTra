@@ -64,7 +64,6 @@ $idProject = $_SESSION["id_project"];
                                 $tAporte = 1;
                                 $placeH = "Síntoma";
                             }
-                            echo "Tipo de aporte seleccionado: " . $tAporte;
                         ?>
                         <form id="dataForm" action="../../controllers/project/p-alimentar.php" method="post">
                             <div class="content-form-alimentar" style="padding: 1.7em; background: white; flex-direction: column;">

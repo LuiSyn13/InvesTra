@@ -59,7 +59,7 @@
 }
 
 .nav-options-project a.selected {
-    background: #000;
+    background: #1D2024;
     /* Color negro */
     color: white;
     border-radius: 5px;
@@ -125,7 +125,7 @@
 
 
 .txtArea_desc {
-    width: 99%;
+    width: 98%;
     height: 270px;
     resize: none;
     outline: none;
@@ -138,17 +138,17 @@
     padding: 5px;
 }
 
-.content-form input {
+.content-form .ip_gdata {
     padding: 5px;
     font-family: Arial, Helvetica, sans-serif;
     border: none;
     border-radius: 5px;
-    background: #EEEEEE;
     outline: none;
 }
 
 .ip_gdata {
     width: 96%;
+    background: #EEEEEE;
 }
 
 .btn_gdata_card {
@@ -188,6 +188,19 @@
 
 #myModal .modal-content {
     font-size: 15px;
+}
+
+
+/* VARIABLES */
+
+.inp_var {
+    width: 80%;
+    padding: 5px;
+    background: #14FF00;
+    border-radius: 5px;
+    border: 1px solid #a6a6a6;
+    background: #EEEEEE;
+    outline: none;
 }
 
 /* Estilos para el modal de guardado */
