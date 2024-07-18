@@ -85,7 +85,7 @@ $idProject = $_SESSION["id_project"];
                         <form action="../../controllers/project/p-pro_obj_hip.php" method="post">
                             <div class="content-form-alimentar" style="padding: 1.7em; background: white; flex-direction: column;">
                                 <div class="descripcion-container">
-                                    <label><?php echo $placeH . $idProject; ?> General:</label>
+                                    <label><?php echo $placeH; ?> General:</label>
                                     <img src="../../img/ayuda.png" class="icon-nav" id="ayudaImg2">
                                 </div>
                                 <br>
