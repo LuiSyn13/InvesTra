@@ -1,7 +1,7 @@
 <?php
     include("../connection.php");
 
-    $idrevision = $_GET["id"];
+    $idrevision = $_GET["idre"];
     $idpro = $_GET["idpro"];
     $est = $_GET["est"];
 
@@ -21,7 +21,7 @@
         case 3:
             /*$sql = "UPDATE revision SET estado = 'Pendiente' WHERE idrevision = $idrevision";
             mysqli_query($cn, $sql);*/
-            header('Location: ../../views/asesor/d-revisar.php?idpro='.$idpro);
+            header('Location: ../../views/asesor/d-revisar.php?idpro='.$idpro.'&idre='.$idrevision);
             break;
         case 4;
             $sql = "UPDATE revision SET estado = 'Pendiente' WHERE idrevision = $idrevision";

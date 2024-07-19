@@ -55,7 +55,7 @@ $sql_vd = "SELECT p.*,p.descripcion AS des_proyect,a.*,i.*,v.*,v.descripcion AS 
             AND p.dni = i.dni
             AND a.idproyecto = v.idproyecto
             AND p.dni = '$idUser'
-            AND a.idproyecto = 3
+            AND a.idproyecto = $idProject
             AND a.idtipoaporte = 1
             AND v.idtipovariable = 1";
 
@@ -70,7 +70,7 @@ $sql_vi = "SELECT p.*,p.descripcion AS des_proyect,a.*,i.*,v.*,v.descripcion AS 
             AND p.dni = i.dni
             AND a.idproyecto = v.idproyecto
             AND p.dni = '$idUser'
-            AND a.idproyecto = 3
+            AND a.idproyecto = $idProject
             AND a.idtipoaporte = 1
             AND v.idtipovariable = 2";
 

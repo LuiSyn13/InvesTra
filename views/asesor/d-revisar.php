@@ -1,6 +1,7 @@
 <?php
     include("../../controllers/auth.php");
     $idUser = $_SESSION["user"];
+    $idre = $_GET["idre"];
     $idpro = $_GET["idpro"];
 ?>
 <!DOCTYPE html>
@@ -26,9 +27,16 @@
                 <embed src="../../database/pdf/pdf-project/<?php echo $idpro.".pdf";?>" type="application/pdf">
             </div>
             <div class="desc_pdf">
-                <span>Añadir comentario</span>
-                <form action="">
-                    <textarea name="" id="" class="textA_rev"></textarea>
+                <span>Añadir comentario<?php echo $idre;?></span>
+                <form action="../../controllers/asesor/p-revisar_proyecto.php" method="post">
+                    <textarea name="recomendacion" class="textA_rev"><?php
+                    $sql = "SELECT*FROM revision WHERE idrevision = $idre AND idproyecto = $idpro AND dniasesor = '$idUser'";
+                    $fila = mysqli_query($cn, $sql);
+                    $contenido = mysqli_fetch_assoc($fila);
+                    echo $contenido["recomendaciones"];
+                    ?></textarea>
+                    <input type="hidden" name="idre" value="<?php echo $idre;?>">
+                    <input type="hidden" name="idpro" value="<?php echo $idpro;?>">
                     <div class="btn_opt">
                         <a href="documentos.php" class="btn btn_doc">Regresar</a>
                         <input class="btn btn_submit" type="submit" value="Aceptar">

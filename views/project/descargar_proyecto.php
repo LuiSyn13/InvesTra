@@ -143,7 +143,7 @@ $sql_vd = "SELECT p.*,p.descripcion AS des_proyect,a.*,i.*,v.*,v.descripcion AS 
             AND p.dni = i.dni
             AND a.idproyecto = v.idproyecto
             AND p.dni = '$idUser'
-            AND a.idproyecto = 3
+            AND a.idproyecto = $idProject
             AND a.idtipoaporte = 1
             AND v.idtipovariable = 1";
 
@@ -158,7 +158,7 @@ $sql_vi = "SELECT p.*,p.descripcion AS des_proyect,a.*,i.*,v.*,v.descripcion AS 
             AND p.dni = i.dni
             AND a.idproyecto = v.idproyecto
             AND p.dni = '$idUser'
-            AND a.idproyecto = 3
+            AND a.idproyecto = $idProject
             AND a.idtipoaporte = 1
             AND v.idtipovariable = 2";
 
@@ -198,7 +198,7 @@ $causas_text = implode(", ", $causas);
 // Texto formateado según APA 7, justificado
 $pdf->SetFont('Times', '', 12);
 $texto = "          La empresa ".$r["nomempresa"].", ".$r["des_proyect"].". 
-        En la empresa se observan los siguientes síntomas: " . $symptoms_text . ". Estos síntomas se deben a diversas causas, entre las cuales destacan: ".$causas_text.". 
+        En la empresqa se observan los siguientes síntomas: " . $symptoms_text . ". Estos síntomas se deben a diversas causas, entre las cuales destacan: ".$causas_text.". 
             De no abordar estos problemas, es probable que los siguientes síntomas persistan o incluso empeoren. La presente investigación propone ".$r_vi["des_var"]." como medida para  ".$r_vd["des_var"]." en la empresa ".$r["nomempresa"].". durante el período ".$r["periodo"].". ";
     
 $pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
@@ -298,7 +298,7 @@ $pdf->Ln(2);
 
 }
 
-$urlPdf = '../../database/pdf/pdf-project/'.$id.'.pdf';
+$urlPdf = '../../database/pdf/pdf-project/'.$idProject.'.pdf';
 
 $pdf->Output('F', $urlPdf);
 ?>
