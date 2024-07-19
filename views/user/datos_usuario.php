@@ -41,17 +41,17 @@ $datoe = mysqli_fetch_assoc($filae);
 
             if(file_exists($file_path)){
             ?>
-                <img src="../../img/profile/<?php echo $idUser; ?>.jpg" width="80" height="80">
+                <img src="../../img/profile/<?php echo $idUser; ?>.jpg" class="user_icon_profile">
             <?php
             } else {
                 $file_path = "../../img/profile/$idUser.png";
                 if(file_exists($file_path)){
                     ?>
-                        <img src="../../img/profile/<?php echo $idUser; ?>.png" width="80" height="80">
+                        <img src="../../img/profile/<?php echo $idUser; ?>.png" class="user_icon_profile">
                     <?php
                     } else {
                     ?>
-                    <div class="user_icon" style="cursor: default; width: 80px; height:80px; color:white; font-size:40px" id="user_icon">
+                    <div class="user_icon_profile"  id="user_icon">
                         <?php echo $fnome.$fape; ?></a>
                     </div>
                     <?php    

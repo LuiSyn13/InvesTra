@@ -67,6 +67,55 @@ header {
     margin-right: 10px;
 }
 
+.user_icon_profile {
+    width: 80px; 
+    height:80px;
+    border-radius: 50%;
+    background: #14FF00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color:white; 
+    font-size:40px
+}
+
+.welcome {
+    width: 93.5%; 
+    background: #F2F2F2; 
+    color: black; 
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.welcome table,
+.welcome td {
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+.welcome td {
+    border-bottom:1px solid #949494;
+}
+
+.user_icon_welcome {
+    width: 150px; 
+    height:150px;
+    border-radius: 50%;
+    background: #14FF00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color:white; 
+    font-size:55px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .icon_user_txt {
     font-size: 20px;
 }

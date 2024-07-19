@@ -18,7 +18,7 @@
         $idUser = $_SESSION["user"];
         $tuser = $_SESSION["tuser"];
         ?>
-        <input type="text" class="search_nav" placeholder="Buscar proyecto..." value="<?php echo $tuser; ?>">
+        <input type="text" class="search_nav" placeholder="Buscar proyecto..." value="<?php echo $titleProject; ?>">
     </div>
     <div class="icon_opt">
         <img src="../../img/icons_header/notification.png" class="icon-nav">
@@ -52,7 +52,7 @@
                 <?php
                 } else {
                 ?>
-                <div class="user_icon" id="user_icon">
+                <div class="user_icon" style="font-family: Arial, Helvetica, sans-serif;" id="user_icon">
                     <?php echo $fnome.$fape; ?></a>
                 </div>
                 <?php    
@@ -77,7 +77,7 @@
                             <?php
                             } else {
                             ?>
-                            <div class="user_icon" style="cursor: default;" id="user_icon">
+                            <div class="user_icon" style="cursor: default; font-family: Arial, Helvetica, sans-serif;" id="user_icon">
                                 <?php echo $fnome.$fape; ?></a>
                             </div>
                             <?php    
