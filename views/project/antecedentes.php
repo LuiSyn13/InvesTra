@@ -35,13 +35,13 @@ $idProject = $_SESSION["id_project"];
                                         <option value="" disabled selected>
                                             Seleccione el tipo de antecedente
                                         </option>
-                                        <option value="1">Nacional</option>
-                                        <option value="2">Internacional</option>
+                                        <option value="1">Internacional</option>
+                                        <option value="2">Nacional</option>                                        
                                         <option value="3">Local</option>
                                     </select>
                                 </td>
                                 <td>
-                                    <a href="" style="background-color: #FFB800; border-radius: 10px; padding: 10px 15px; font-weight: bold; cursor: pointer; border: none;">
+                                    <a href="mostrar_antecdentes.php" style="background-color: #FFB800; border-radius: 10px; padding: 10px 15px; font-weight: bold; cursor: pointer; border: none;">
                                         Mostrar los antecedentes en PDF
                                         <img src="../../img/pdf.png" alt="" width="20px" height="25px" style="margin-left: 7px; vertical-align: middle;">
                                     </a>
