@@ -73,7 +73,7 @@
                             ?>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-view">Ver</a>
+                                <a href="../project/descargar_proyecto.php" class="btn btn-view">Ver</a>
                                 <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"];?>" class="btn btn-edit">Editar</a>
                                 <a href="#" class="btn btn-delete">Eliminar</a>
                             </td>

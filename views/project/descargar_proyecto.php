@@ -302,6 +302,3 @@ $urlPdf = '../../database/pdf/pdf-project/'.$id.'.pdf';
 
 $pdf->Output('F', $urlPdf);
 ?>
-<script>
-    window.open('<?php echo $urlPdf;?>', '_blank')
-</script>
