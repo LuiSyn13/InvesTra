@@ -1,3 +1,7 @@
+<?php
+include("../../controllers/auth.php");
+$idUser = $_SESSION["user"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 

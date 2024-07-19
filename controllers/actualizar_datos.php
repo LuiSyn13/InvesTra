@@ -60,28 +60,18 @@
 
             list($n,$e)=explode(".",$nombre);
 
-            if($e != 'jpg' || $e != 'png'){
-
-                mysqli_close($cn);
-                $mensaje = "No se ha podido realizar el cambio. Verifique su tipo de archivo.";
-                header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
-
-            } else {
-
-            switch ($e) {
-                case 'jpg':
-                    
-                    move_uploaded_file($archivo, "../img/profile/".$idUser.".jpg");
-
-                    break;
-
-                case 'png':
-                    
+            if($e != 'jpg'){
+                if ($e != 'png') {
+                    mysqli_close($cn);
+                    $mensaje = "No se ha podido realizar el cambio. Verifique su tipo de archivo.";
+                    header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
+                } else {
                     move_uploaded_file($archivo, "../img/profile/".$idUser.".png");
+                }
+            } else {
+                move_uploaded_file($archivo, "../img/profile/".$idUser.".jpg");
+            }
 
-                    break;
-            }
-            }
             mysqli_close($cn);
             header("location: ../views/user/datos_usuario.php?tpo=$tipo");
             break;

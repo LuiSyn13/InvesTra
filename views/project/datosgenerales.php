@@ -54,22 +54,22 @@ $idProject = $_SESSION["id_project"];
                     <table>
                         <tr>
                             <td>Nombre del proyecto:</td>
-                            <td><input type="text" name="nombre_proyecto" value="<?php echo $nomPro; ?>" placeholder="Nombre del proyecto..." class="ip_gdata"></td>
+                            <td><input type="text" name="nombre_proyecto" value="<?php echo $nomPro; ?>" placeholder="Nombre del proyecto..." class="ip_gdata" required></td>
                         </tr>
                         <tr>
                             <td>Nombre de la Empresa:</td>
-                            <td><input type="text" name="nombre_empresa" value="<?php echo $nomEmp; ?>" placeholder="Nombre de la empresa..." class="ip_gdata"></td>
+                            <td><input type="text" name="nombre_empresa" value="<?php echo $nomEmp; ?>" placeholder="Nombre de la empresa..." class="ip_gdata" required></td>
                         </tr>
                         <tr>
                             <td>Dirección de la Empresa:</td>
-                            <td><input type="text" name="direccion_empresa" value="<?php echo $dirEmp; ?>" placeholder="Dirección de la empresa..." class="ip_gdata"></td>
+                            <td><input type="text" name="direccion_empresa" value="<?php echo $dirEmp; ?>" placeholder="Dirección de la empresa..." class="ip_gdata" required></td>
                         </tr>
                         <tr>
                             <td>Periodo de la Investigación:</td>
                             <td>
-                                <input type="date" name="fecha_inicio" value="<?php echo $fecInt; ?>">
+                                <input type="date" name="fecha_inicio" value="<?php echo $fecInt; ?>" required>
                                 a
-                                <input type="date" name="fecha_fin" value="<?php echo $fecFin; ?>">
+                                <input type="date" name="fecha_fin" value="<?php echo $fecFin; ?>" required>
                             </td>
                         </tr>
                         <tr>

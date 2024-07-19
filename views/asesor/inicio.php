@@ -38,33 +38,48 @@ $idUser = $_SESSION["user"];
                     <div class="body_inbox">
                         <?php
                         $sqlProject = "SELECT rev.*, pro.*, investigador.* FROM revision rev LEFT JOIN proyecto pro ON rev.idproyecto = pro.idproyecto, investigador
-                                        WHERE rev.dniasesor = '$idUser' AND rev.estado = 'Enviado' AND pro.dni = investigador.dni";
+                                        WHERE rev.dniasesor = '$idUser' AND pro.dni = investigador.dni";
                         $filaProject = mysqli_query($cn, $sqlProject);
                         while ($r = mysqli_fetch_assoc($filaProject)) {
-                            if ($r["estado"] == "Enviado") {
+                            if ($r["estado"] == "Enviado" ||$r["estado"] == "Proceso") {
                                 $size_nome = strlen($r["nomproyecto"]);
-                                if($size_nome > 30) {
-                                    
+                                if($size_nome > 50) {
+                                    $nomePro = substr($r["nomproyecto"], 0, 47).'...';
+                                } else {
+                                    $nomePro = $r["nomproyecto"];
                                 }
+                            if ($r["estado"] == "Proceso") {
+                                $bgre = "#00ff2f";
+                                $text = "Revisar";
+                                $estre = 3;
+
+                                $bgom = "#BEBEBE";
+                                $textom = "Omitir";
+                                $estom = 4;
+                            } else {
+                                $bgre = "#00B2FF";
+                                $text = "Aceptar";
+                                $estre = 1;
+
+                                $bgom = "#FF3535";
+                                $textom = "Rechazar";
+                                $estom = 2;
+                            }
                         ?>
                                 <div class="content_msn_projet">
                                     <div class="info_msn_project">
                                         <div>
-                                            <span class="title_span_msn"><?php echo $r["nomproyecto"];?></span>
+                                            <span class="title_span_msn"><?php echo $nomePro;?></span>
                                             <a href="" style="text-decoration: none; padding: 5px; background: #ffb800;">C. de diagnóstico</a>
                                         </div>
                                         <div>
                                             <span><?php echo $r["apaterno"]." ".$r["amaterno"]." ".$r["nombre"];?></span>
-                                            <span>Fecha de envío: 10/07/2024</span>
+                                            <span><?php echo substr($r["fechaenvio"], 0, 10);?></span>
                                         </div>
                                     </div>
                                     <div class="options_msn_project">
-                                        <div class="option_msn option_first_msn">
-                                            <span>Aceptar</span>
-                                        </div>
-                                        <div class="option_msn option_second_msn">
-                                            <span>Rechazar</span>
-                                        </div>
+                                        <a href="../../controllers/asesor/p-inicio.php?id=<?php echo $r["idrevision"]."&est=".$estre."&idpro=".$r["idproyecto"];?>" class="option_msn" style="background: <?php echo $bgre;?>"><?php echo $text;?></a>
+                                        <a href="../../controllers/asesor/p-inicio.php?id=<?php echo $r["idrevision"]."&est=".$estom."&idpro=".$r["idproyecto"];?>" class="option_msn" style="background: <?php echo $bgom;?>"><?php echo $textom;?></a>
                                     </div>
                                 </div>
                         <?php
@@ -76,6 +91,7 @@ $idUser = $_SESSION["user"];
             </div>
         </div>
     </div>
+    <script src="../../js/asesor/inicio.js"></script>
 </body>
 
 </html>

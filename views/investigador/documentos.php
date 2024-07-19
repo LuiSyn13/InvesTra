@@ -57,7 +57,7 @@
                                 <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"];?>" class="btn btn-edit">Editar</a>
                                 <a href="#" class="btn btn-delete">Eliminar</a>
                             </td>
-                            <td><a href="#" class="btn btn-view">Visualizar</a></td>
+                            <td><a href="Visualizar.php?idproyecto=<?php echo $r['idproyecto']; ?>" class="btn btn-view">Visualizar</a></td>
                             <td>
                                 <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto'];?>" data-idproyecto = "<?php echo $r["idproyecto"];?>">Enviar</a>
 
@@ -91,6 +91,7 @@
                                 
                                 <div class="modal-background" id="modal-background"></div>
                             </td>
+                           
                         </tr>
                         <?php } ?>
                     </tbody>

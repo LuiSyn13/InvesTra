@@ -5,21 +5,16 @@ $idProject = $_SESSION["id_project"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuadro diagnóstico</title>
-    <?php
-    include("../template/link_head.php");
-    ?>
+    <?php include("../template/link_head.php"); ?>
     <link rel="stylesheet" href="../../css/cuadro_diagnostico.css">
 </head>
-
 <body>
-    <?php
+<?php
     include("../template/header.php");
-    include("../template/proyecto.php");
     ?>
     <div class="container">
         <div class="content-info-project">
@@ -34,8 +29,7 @@ $idProject = $_SESSION["id_project"];
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            
+                    <tr>
                             <td>
                                 <textarea name="sintomas" class="textArea" readonly>
                                 <?php
@@ -91,31 +85,18 @@ $idProject = $_SESSION["id_project"];
                         </tr>
                     </tbody>
                 </table>
-                </fieldset>
-                <div class="btn_gdata_card">
-                    <a class="btn_gdata" href="mostrar_realidad.php">Obtener descripción de la realidad problemática</a>
-                </div>
             </div>
         </div>
     </div>
-
-    <div id="myModal">
-        <div class="modal-content" id="modalContent">
-            <label style="font-weight: bold;"><i>Guía rápida:</i></label>
-            <p><i>Para insertar los datos, escriba en los campos correspondientes y presione el botón "Obtener descripción de la realidad problemática".</i></p>
-        </div>
-    </div>
-
     <script>
         function submitForm() {
             const sintomas = document.querySelector('[name="sintomas"]').value;
             const causas = document.querySelector('[name="causas"]').value;
-            const pronostico = document.querySelector('[name="pronostico"]').value;
+             const pronostico = document.querySelector('[name="pronostico"]').value;
             const control = document.querySelector('[name="control"]').value;
 
             alert(`Síntomas: ${sintomas}\nCausas: ${causas}\nPronóstico: ${pronostico}\nControl: ${control}`);
         }
     </script>
 </body>
-
 </html>
