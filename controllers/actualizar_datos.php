@@ -12,6 +12,12 @@
             $paterno = $_POST["apellido-paterno"];
             $materno = $_POST["apellido-materno"];
 
+            if (isset($nombre) || isset($paterno) || isset($materno)) {
+                mysqli_close($cn);
+                $mensaje = "Rellene todos los campos correctamente.";
+                header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
+            } else {
+
             switch ($tuser) {
                 case 'asesor':
                     $dina = $_POST["dina"];
@@ -35,6 +41,7 @@
                     break;
                     
             }
+        }
             break;
         
         case 2:
@@ -46,11 +53,67 @@
                     WHERE dni = '$idUser';";
 
             break;
+
+        case 3:
+            $archivo=$_FILES["archivo"]["tmp_name"];
+            $nombre=$_FILES["archivo"]["name"];
+
+            list($n,$e)=explode(".",$nombre);
+
+            if($e != 'jpg' || $e != 'png'){
+
+                mysqli_close($cn);
+                $mensaje = "No se ha podido realizar el cambio. Verifique su tipo de archivo.";
+                header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
+
+            } else {
+
+            switch ($e) {
+                case 'jpg':
+                    
+                    move_uploaded_file($archivo, "../img/profile/".$idUser.".jpg");
+
+                    break;
+
+                case 'png':
+                    
+                    move_uploaded_file($archivo, "../img/profile/".$idUser.".png");
+
+                    break;
+            }
+            }
+            mysqli_close($cn);
+            header("location: ../views/user/datos_usuario.php?tpo=$tipo");
+            break;
+        case 4:
+            $actual = $_POST["actual"];
+            $nuevo = $_POST["nuevo"];
+            $confirm = $_POST["confirmar"];
+
+            $sqlver = "select * from usuario where dni = '$idUser' and password = '$actual';";
+            $filaver = mysqli_query($cn,$sqlver);
+            $datover = mysqli_fetch_assoc($filaver);
+
+            if (isset($datover)) {
+                if ($nuevo == $confirm) {
+                    $sql = "update usuario set password = '$nuevo' where dni = '$idUser';";
+                } else {
+                    mysqli_close($cn);
+                    $mensaje = "Las contraseñas ingresadas no coinciden.";
+                    header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
+                }
+            } else {
+                mysqli_close($cn);
+                $mensaje = "La contraseña que ha ingresado es incorrecta.";
+                header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");
+            }
+
+            break;
     }
 
     mysqli_query($cn,$sql);
     mysqli_close($cn);
 
-    header("location: ../views/investigador/datos_personales.php?tpo=$tipo");
+    header("location: ../views/user/datos_usuario.php?tpo=$tipo");
 
 ?>
