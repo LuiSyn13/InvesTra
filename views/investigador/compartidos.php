@@ -2,6 +2,7 @@
 include("../../controllers/auth.php");
 include("../../controllers/connection.php");
 $idProject = $_SESSION["id_project"];
+$idUser = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,6 +13,7 @@ $idProject = $_SESSION["id_project"];
     <title>Compartidos</title>
     <link rel="stylesheet" href="../css/proyecto.css">
     <link rel="stylesheet" href="../../css/compartidos.css">
+    <link rel="stylesheet" href="../../css/documentos.css">
     <?php
     include("../template/link_head.php");
     ?>
@@ -26,34 +28,54 @@ $idProject = $_SESSION["id_project"];
         include("../template/principal.php")
         ?>
         <div class="content_info">
-            Proyectos compartidos:
-            <br>
-            <br>
+            <h2><label style="font-family: Arial, Helvetica, sans-serif;">Proyectos compartidos:</label></h2>
             <br>
                     <center>
-                        <table border="1" cellspacing="0" style="width: 85%; border-color: lightgrey;">
-                            <tr style="background-color: lightgrey;">
-                                <td align="center">Título</td>
-                                <td align="center">Asesor</td>
-                                <td align="center">Estado</td>
-                                <td align="center">F. de envío</td>
-                                <td align="center">F. de revisión</td>
-                                <td align="center">Opciones</td>
-                            </tr>
+                        <div class="table-container">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
                             <tr>
-                                <td>Título de la investigación</td>
-                                <td>Nombre del Asesor</td>
+                                <td>Título</td>
+                                <td>Asesor</td>
+                                <td>Estado</td>
+                                <td>F. de envío</td>
+                                <td>F. de revisión</td>
+                                <td>Opciones</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $sql_c = "SELECT p.idproyecto as idproyecto, p.*, a.*,r.*
+                                            FROM proyecto p, asesor a, revision r
+                                            WHERE p.idproyecto = r.idproyecto
+                                            AND r.dniasesor = a.dni
+                                            AND p.dni = $idUser";
+
+                                    $fila = mysqli_query($cn, $sql_c);
+                                    while (mysqli_fetch_assoc($fila)) {
+                                ?>
+                            
+                            <tr>
                                 <td>
-                                    <?php 
-                                        $estado = "Pendiente";
-                                        echo $estado; 
-                                    ?>
+                                <?php 
+                                    $size_nome = strlen($r_c["nomproyecto"]);
+                                    if($size_nome > 50) {
+                                    $nomePro = substr($r_c["nomproyecto"], 0, 47).'...';
+                                    } else {
+                                    $nomePro = $r_c["nomproyecto"];
+                                    }
+                                    echo $nomePro; 
+                                ?>
                                 </td>
-                                <td>Fecha en la cual fue enviada</td>
-                                <td>Fecha en la cual fue revisada</td>
+                                <td><?php echo $r_c["nombre"]." ".$r_c["apaterno"]." ".$r_c["amaterno"]?></td>
+                                <td>
+                                    <?php echo $r_c["estado"];?>
+                                </td>
+                                <td><?php echo $r_c["fechaenvio"]; ?></td>
+                                <td><?php echo $r_c["fecharevision"];?></td>
                                 <td>
                                     <?php                                    
-                                        if($estado == "Pendiente"){
+                                        if($r_c["estado"] == "Pendiente"){
                                             $button = "Cancelar envío";
                                     ?>
                                     <br>
@@ -66,17 +88,25 @@ $idProject = $_SESSION["id_project"];
                                 <input type="checkbox" id="btn-modal">
                                 <div class="container-modal">
                                     <div class="content-modal">
-                                        <h2 align="center">*Título del Proyecto A*</h2>
+                                        <h2 align="center"><?php echo $nomePro?></h2>
                                         <p align="center">¿Estás seguro que deseas cancelar el envío?</p>
                                         <div class="btn">
                                             <label for="btn-modal" class="cancelar">Cancelar</label>
-                                            <label for="btn-modal" class="aceptar">Aceptar</label>
+                                            <label for="btn-modal" class="aceptar" type="submit">
+                                                Aceptar
+                                                <?php
+                                                $idproyecto = $r_c["idproyecto"];
+                                                $sql_del = "delete from revision WHERE idproyecto = '$idproyecto'";
+                                                mysqli_query($cn,$sql_del);
+                                                header('location: compartidos.php');
+                                                ?>
+                                            </label>
                                         </div>
                                     </div>
                                     <label for="btn-modal" class="cerrar-modal"></label>
                                 </div>
                             <?php
-                            } else if ($estado == "Revisado") {
+                            } else if ($r_c["estado"] == "Revisado") {
                                 $button = "Visualizar";
                             ?>
                                 <br>
@@ -89,13 +119,13 @@ $idProject = $_SESSION["id_project"];
                                 <input type="checkbox" id="btn-modal">
                                 <div class="container-modal">
                                     <div class="content-modal">
-                                        <h2 align="center">*Título del Proyecto A*</h2>
+                                        <h4 align="center"><?php echo $r_c["nomproyecto"]?></h4>
                                         <p align="justify">
-                                            Asesor: *Asesor 2*<br>
-                                            Estado: Revisado<br>
-                                            Fecha de revisión: dd/mm/aa hh:mm<br>
+                                            Asesor: <?php echo $r_c["nombre"]." ".$r_c["apaterno"]." ".$r_c["amaterno"]?><br>
+                                            Estado: <?php echo $r_c["estado"];?><br>
+                                            Fecha de revisión: <?php echo $r_c["fecharevision"]; ?><br>
                                             Recomendaciones: <br>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            <?php echo $r_c["recomendaciones"]; ?>
                                         </p>
                                         <div class="btn-2">
                                             <center>
@@ -111,7 +141,12 @@ $idProject = $_SESSION["id_project"];
                             <br>
                         </td>
                     </tr>
+                    <?php
+                                    }
+                                    ?>
+                    </tbody>
                 </table>
+                </div>
             </center>
         </div>
     </div>
