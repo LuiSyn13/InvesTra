@@ -59,14 +59,14 @@
                             </td>
                             <td><a href="#" class="btn btn-view">Visualizar</a></td>
                             <td>
-                                <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto']; ?>">Enviar</a>
+                                <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto'];?>" data-idproyecto = "<?php echo $r["idproyecto"];?>">Enviar</a>
 
                                 <div id="modal">
                                     <h2><center id="modal-nomproyecto"></center></h2>
                                     <form action="../../controllers/project/p-enviar_proyecto.php" method="post">
                                         <div class="form-group">
                                         <label for="cboasesor">Asesor:</label>
-                                        <input type="hidden" name="idproyecto" value="<?php echo $r["idproyecto"];?>">
+                                        <input type="hidden" name="idproject" id="idproject">
                                         <input type="hidden" name="usuario" value="<?php echo $idUser;?>">
                                         <select name="cboasesor" id="cboasesor">
                                             <!--<option value="" disabled selected>Seleccione al asesor</option>-->
