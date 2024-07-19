@@ -75,7 +75,24 @@
                             <td>
                                 <a href="../project/descargar_proyecto.php" class="btn btn-view">Ver</a>
                                 <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"];?>" class="btn btn-edit">Editar</a>
-                                <a href="#" class="btn btn-delete">Eliminar</a>
+                                <a href="#" class="btn btn-delete" id="btn-abrir-modal2" data-nomproyecto2="<?php echo $r['nomproyecto'];?>" data-idproyecto2 = "<?php echo $r["idproyecto"];?>">Eliminar</a>
+
+                                <div id="modal2">
+                                    <h2><center id="modal-nomproyecto2"></center></h2>
+                                    <form action="../../controllers/project/el-proyecto.php" method="post">
+                                        
+                                        <label><center><h2>¿Estás seguro que quieres eliminar el proyecto?</h2></center></label>
+                                        <input type="hidden" name="idproject" id="idproject2">
+                                        <input type="hidden" name="usuario" value="<?php echo $idUser;?>">
+                                        
+                                        <div class="modal-buttons">
+                                            <input type="submit" class="btn btn-send" style="font-weight: bold; border-radius: 10px">
+                                            <a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal2">Cancelar</a>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                                <div class="modal-background" id="modal-background2"></div>
                             </td>
                             <td><a href="Visualizar.php?idproyecto=<?php echo $r['idproyecto']; ?>" class="btn btn-view">Visualizar</a></td>
                             <td>
@@ -107,7 +124,6 @@
                                     </form>
                                     
                                 </div>
-                                
                                 <div class="modal-background" id="modal-background"></div>
                             </td>
                            
@@ -115,6 +131,13 @@
                         <?php } ?>
                     </tbody>
                 </table>
+                <br><br>
+                <?php
+                    if(isset($_GET["msj"])){
+                        $mensaje=$_GET["msj"];
+                        echo "<center><h2 id='titulo'>$mensaje</h2></center>";
+                    }
+                    ?>
             </div>
         </div>
     </div>

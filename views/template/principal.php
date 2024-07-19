@@ -1,4 +1,5 @@
 <div class="nav_options">
+    <?php $_SESSION["id_project"] = 0; ?>
     <a href="inicio.php"><img src="../../img/icons_document/home.png" class="icon-nav">Inicio</a>
     <a href="documentos.php"><img src="../../img/icons_document/document.png" class="icon-nav"> Documentos</a>
     <a href="compartidos.php"><img src="../../img/icons_document/sharet.png" class="icon-nav"> Compartidos</a>
