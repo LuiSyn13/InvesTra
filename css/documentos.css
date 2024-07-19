@@ -71,6 +71,22 @@
     display: none;
 }
 
+#modal2 {
+    max-width: 70%;
+    width: 35%;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+}
+
 select {
     padding: 5px;
     border-radius: 5px;

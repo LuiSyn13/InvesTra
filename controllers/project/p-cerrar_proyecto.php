@@ -1,5 +1,6 @@
 <?php
     include("../auth.php");
     $_SESSION["id_project"] = 0;
-    header("Location: ../../views/investigador/inicio.php");
+    $tuser = $_SESSION["tuser"];
+    header("Location: ../../views/$tuser/inicio.php");
 ?>

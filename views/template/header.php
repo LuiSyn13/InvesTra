@@ -1,6 +1,6 @@
 <header>
     <div>
-        <a href="../<?php echo $_SESSION["tuser"]; ?>/inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
+        <a href="../../controllers/project/p-cerrar_proyecto.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
     </div>
     <div class="cont_search">
         <?php
