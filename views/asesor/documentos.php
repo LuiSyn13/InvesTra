@@ -64,7 +64,7 @@ $idUser = $_SESSION["user"];
                                     <td><?php echo substr($r["fechaenvio"], 0, 10);?></td>
                                     <td class="option-date"><button class="btn btn-view">Visualizar</button></td>
                                     <td class="option-date">
-                                        <a href="d-revisar.php?idpro=<?php echo $r["idproyecto"];?>" class="btn btn-revise">Revisar</a>
+                                        <a href="d-revisar.php?idre=<?php echo $r["idrevision"].'&idpro='.$r["idproyecto"];?>" class="btn btn-revise">Revisar</a>
                                         <a href="d-enviar.php" class="btn btn-send">Enviar</a>
                                     </td>
                                 </tr>
