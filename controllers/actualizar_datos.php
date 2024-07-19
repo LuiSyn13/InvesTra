@@ -12,7 +12,7 @@
             $paterno = $_POST["apellido-paterno"];
             $materno = $_POST["apellido-materno"];
 
-            if (isset($nombre) || isset($paterno) || isset($materno)) {
+            if ($nombre == "" || $paterno == "" || $materno == "") {
                 mysqli_close($cn);
                 $mensaje = "Rellene todos los campos correctamente.";
                 header("location: ../views/user/datos_usuario.php?tpo=$tipo&msj=$mensaje");

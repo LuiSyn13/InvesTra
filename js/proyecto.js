@@ -2,7 +2,6 @@ const export_project= document.getElementById("export-project")
 const submenu_export = document.getElementById("submenu-export")
 
 export_project.addEventListener('click', () => {
-    console.log("Holss")
     if(submenu_export.classList.contains("options-export-off")) {
         submenu_export.classList.remove("options-export-off")
         submenu_export.classList.add("options-export-on")
