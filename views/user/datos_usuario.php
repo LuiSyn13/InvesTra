@@ -79,27 +79,28 @@ $datoe = mysqli_fetch_assoc($filae);
             <div>
             <a href="../user/datos_usuario.php?tpo=1">
                 <div class="nav-link <?php echo (!isset($_GET['tpo']) || $_GET['tpo'] == 1) ? 'selected' : ''; ?>">
-                    <img src="../../img/icons_user/personales.png" class="icon-nav" alt="">Datos Personales
+                    <img src="../../img/icons_user/personales.png" class="icon-nav" style="margin-top:5px;">Datos Personales
                 </div>
             </a>
             <a href="../user/datos_usuario.php?tpo=2">
                 <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 2) ? 'selected' : ''; ?>">
-                    <img src="../../img/icons_user/especificos.png" class="icon-nav" alt="">Datos Específicos
+                    <img src="../../img/icons_user/especificos.png" class="icon-nav" style="margin-top:5px;">Datos Específicos
                 </div>
             </a>
             <a href="../user/datos_usuario.php?tpo=3">
                 <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 3) ? 'selected' : ''; ?>">
-                    <img src="../../img/icons_user/fotoperfil.png" class="icon-nav" alt="">Cambiar Foto de Perfil
+                    <img src="../../img/icons_user/fotoperfil.png" class="icon-nav" style="margin-top:5px;">Cambiar Foto de Perfil
                 </div>
             </a>
             <a href="../user/datos_usuario.php?tpo=4">
                 <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 4) ? 'selected' : ''; ?>">
-                    <img src="../../img/icons_user/cambiarpass.png" class="icon-nav" alt="">Cambiar Contraseña
+                    <img src="../../img/icons_user/cambiarpass.png" class="icon-nav" style="margin-top:5px;">Cambiar Contraseña
                 </div>
             </a>
             </div>
             <br><br><br><br><br>
-            <a href="../../controllers/project/p-cerrar_proyecto.php" class="a_home"><img src="../../img/icons_document/home.png" style="margin-top:5px;width:30px; height:30px">Volver al inicio</a>
+            <a href="../../controllers/project/p-cerrar_proyecto.php" class="a_home">
+                <img src="../../img/icons_document/home.png" style="margin-top:5px;width:30px; height:30px">Volver al inicio</a>
         </div>
         <?php
         if (isset($_GET["tpo"])) {

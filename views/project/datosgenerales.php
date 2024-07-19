@@ -67,9 +67,9 @@ $idProject = $_SESSION["id_project"];
                         <tr>
                             <td>Periodo de la Investigación:</td>
                             <td>
-                                <input type="date" name="fecha_inicio" value="<?php echo $fecInt; ?>">
+                                <input type="date" name="fecha_inicio" value="<?php echo $fecInt; ?>" required>
                                 a
-                                <input type="date" name="fecha_fin" value="<?php echo $fecFin; ?>">
+                                <input type="date" name="fecha_fin" value="<?php echo $fecFin; ?>" required>
                             </td>
                         </tr>
                         <tr>
