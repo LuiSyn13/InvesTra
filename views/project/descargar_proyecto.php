@@ -58,7 +58,6 @@ $pdf->Ln(90); // Espacio entre la imagen y el título del proyecto
 $sql = "SELECT p.*, i.*, c.*
         FROM proyecto p, investigador i, carrera c 
         WHERE p.dni = i.dni
-        AND i.idcarrera = c.idcarrera 
         AND p.dni='$idUser';";
 $fila = mysqli_query($cn, $sql);
 $r = mysqli_fetch_assoc($fila);
