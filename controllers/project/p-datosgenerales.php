@@ -42,12 +42,4 @@ switch ($tConsulta) {
         header("Location: ../../views/project/datosgenerales.php");
         break;
 }
-<<<<<<< HEAD
-/* Obtener e iniciar session =  */
-mysqli_query($cn, $sql);
-mysqli_close($cn);
-
-header("Location: ../../views/project/datosgenerales.php");
-=======
->>>>>>> 50d2fedba0199c8503023c4829aa49deff0b2d91
 ?>

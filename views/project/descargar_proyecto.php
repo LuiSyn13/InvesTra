@@ -206,7 +206,181 @@ $pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
 $pdf->Ln(2);
 
 
+//PDF PROBLEMA
 
+
+$pdf->AddPage();
+
+$pdf->SetFont('Times', 'B', 14);
+$pdf->MultiCell(0, 10, utf8_decode('Formulación del problema:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Problema general:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_pg = "SELECT pr.*,tp.*,pr.descripcion AS des_pro,p.*
+            FROM problema pr, tipoplaneamiento tp, proyecto p
+            WHERE pr.idproyecto = p.idproyecto
+            AND pr.idtipoplaneamiento = tp.idtipoplaneamiento
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 1";
+
+$fila_pg = mysqli_query($cn, $sql_pg);
+
+$r_pg = mysqli_fetch_assoc($fila_pg);
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_pg["des_pro"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+
+$pdf->Ln(2);
+
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Problemas específicos:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_pg = "SELECT pr.*,tp.*,pr.descripcion AS des_pro,p.*
+            FROM problema pr, tipoplaneamiento tp, proyecto p
+            WHERE pr.idproyecto = p.idproyecto
+            AND pr.idtipoplaneamiento = tp.idtipoplaneamiento
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 2";
+
+$fila_pg = mysqli_query($cn, $sql_pg);
+
+while($r_pg = mysqli_fetch_assoc($fila_pg)){
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_pg["des_pro"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+}
+
+
+//PDF OBJETIVO
+
+
+$pdf->AddPage();
+
+$pdf->SetFont('Times', 'B', 14);
+$pdf->MultiCell(0, 10, utf8_decode('Objetivos de la investigación:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Objetivo general:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_og = "SELECT o.*,o.descripcion AS des_ob,tp.*,pr.*,p.*
+            FROM objetivo o, tipoplaneamiento tp, problema pr, proyecto p
+            WHERE o.idtipoplaneamiento = tp.idtipoplaneamiento
+            AND o.idproblema = pr.idproblema
+            AND p.idproyecto = pr.idproyecto
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 1";    
+
+$fila_og = mysqli_query($cn, $sql_og);
+
+$r_og = mysqli_fetch_assoc($fila_og);
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_og["des_ob"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+
+$pdf->Ln(2);
+
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Objetivos específicos:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_pe = "SELECT o.*,o.descripcion AS des_ob,tp.*,pr.*,p.*
+            FROM objetivo o, tipoplaneamiento tp, problema pr, proyecto p
+            WHERE o.idtipoplaneamiento = tp.idtipoplaneamiento
+            AND o.idproblema = pr.idproblema
+            AND p.idproyecto = pr.idproyecto
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 2";   
+
+$fila_pe = mysqli_query($cn, $sql_pe);
+
+while($r_pe = mysqli_fetch_assoc($fila_pe)){
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_pe["des_ob"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+}
+
+
+//PDF HIPOTESIS
+
+
+$pdf->AddPage();
+
+$pdf->SetFont('Times', 'B', 14);
+$pdf->MultiCell(0, 10, utf8_decode('Hipotesis de la investigación:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Hipotesis general:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_hg = "SELECT h.*,h.descripcion AS des_hi,tp.*,o.*,pr.*,p.*
+            FROM hipotesis	h,tipoplaneamiento tp, objetivo o, problema pr, proyecto p
+            WHERE tp.idtipoplaneamiento = h.idtipoplaneamiento
+            AND h.idobjetivo = o.idobjetivo
+            AND o.idproblema = pr.idproblema
+            AND pr.idproyecto = p.idproyecto
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 1";    
+
+$fila_hg = mysqli_query($cn, $sql_hg);
+
+$r_hg = mysqli_fetch_assoc($fila_hg);
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_hg["des_hi"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+
+$pdf->Ln(2);
+
+
+$pdf->SetFont('Times', 'B', 12);
+$pdf->MultiCell(0, 10, utf8_decode('Hipotesis específicos:'), 0, 'L');
+
+$pdf->Ln(2);
+
+$sql_he = "SELECT h.*,h.descripcion AS des_hi,tp.*,o.*,pr.*,p.*
+            FROM hipotesis	h,tipoplaneamiento tp, objetivo o, problema pr, proyecto p
+            WHERE tp.idtipoplaneamiento = h.idtipoplaneamiento
+            AND h.idobjetivo = o.idobjetivo
+            AND o.idproblema = pr.idproblema
+            AND pr.idproyecto = p.idproyecto
+            AND p.dni = '$idUser'
+            AND p.idproyecto = $idProject
+            AND tp.idtipoplaneamiento = 2";
+
+$fila_he = mysqli_query($cn, $sql_he);
+
+while($r_he = mysqli_fetch_assoc($fila_he)){
+// Texto formateado según APA 7, justificado
+$pdf->SetFont('Times', '', 12);
+$texto = "          ".$r_he["des_hi"]."";
+$pdf->Justify($texto, 160, 10); // Justificar el texto sin sangría
+}
 
 
 //PDF ANTECEDENTES
