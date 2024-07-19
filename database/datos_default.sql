@@ -30,7 +30,7 @@ INSERT INTO condicion (nomcondicion) VALUES ('Alumno'), ('Egresado');
 
 -- CARRERA
 
-INSERT INTO carrera (nomcarrera) VALUES ('Ing. Electronica'), ('Ing. de Sistemas'), ('Ing. Industrial'), ('Ing. Informatica'), ('Otro');
+INSERT INTO carrera (nomcarrera) VALUES ('Ingeniería Electronica'), ('Ingeniería de Sistemas'), ('Ingeniería Industrial'), ('Ingeniería Informática'), ('Otro');
 
 -- ESPECIALIDAD
 

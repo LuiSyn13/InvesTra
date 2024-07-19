@@ -1,6 +1,6 @@
 <header>
     <div>
-        <a href="../investigador/inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
+        <a href="../<?php echo $_SESSION["tuser"]; ?>/inicio.php" class="a-main"><span>Inves<span class="twoTextLogo">Tra</span></span></a>
     </div>
     <div class="cont_search">
         <?php
@@ -37,23 +37,60 @@
         }
         $fnome = $date["nombre"][0];
         $fape = $date["apaterno"][0];
+
+        $file_path = "../../img/profile/$idUser.jpg";
+
+        if(file_exists($file_path)){
         ?>
-        <div class="user_icon" id="user_icon">
-            <span class="icon_user_txt"><?php echo $fnome.$fape;?></span>
-        </div>
+            <img src="../../img/profile/<?php echo $idUser; ?>.jpg" class="user_icon" id="user_icon" width="80" height="80">
+        <?php
+        } else {
+            $file_path = "../../img/profile/$idUser.png";
+            if(file_exists($file_path)){
+                ?>
+                    <img src="../../img/profile/<?php echo $idUser; ?>.png" class="user_icon" id="user_icon" width="80" height="80">
+                <?php
+                } else {
+                ?>
+                <div class="user_icon" id="user_icon">
+                    <?php echo $fnome.$fape; ?></a>
+                </div>
+                <?php    
+            }
+        }
+        ?>
         <div class="cont_subuserOff" id="content_subuser">
             <div class="submenu_user">
                 <div class="date_per_user">
-                    <div class="user_icon" id="user_icon">
-                        <a href="fotoperfil.php" class="icon_user_txt"><?php echo $fnome.$fape; ?></a>
-                    </div>
+                    <?php
+                    $file_path = "../../img/profile/$idUser.jpg";
+
+                    if(file_exists($file_path)){
+                    ?>
+                        <img src="../../img/profile/<?php echo $idUser; ?>.jpg" class="user_icon" id="user_icon">
+                    <?php
+                    } else {
+                        $file_path = "../../img/profile/$idUser.png";
+                        if(file_exists($file_path)){
+                            ?>
+                                <img src="../../img/profile/<?php echo $idUser; ?>.png" class="user_icon" id="user_icon">
+                            <?php
+                            } else {
+                            ?>
+                            <div class="user_icon" style="cursor: default;" id="user_icon">
+                                <?php echo $fnome.$fape; ?></a>
+                            </div>
+                            <?php    
+                        }
+                    }
+                    ?>
                     <div class="info_user">
                         <span class="info_user_txt"><?php echo $dateUser; ?></span>
                     </div>
                 </div>
-                <a class="nav_user" href="../investigador/datos_personales.php">Datos Personales</a>
-                <a class="nav_user" href="#">Cambiar Foto de Perfil</a>
-                <a class="nav_user" href="../asesor/inicio.php">Cambiar contraseña</a>
+                <a class="nav_user" href="../user/datos_usuario.php">Datos Personales</a>
+                <a class="nav_user" href="../user/datos_usuario.php?tpo=3">Cambiar Foto de Perfil</a>
+                <a class="nav_user" href="../user/datos_usuario.php?tpo=4">Cambiar contraseña</a>
                 <a class="nav_user" href="../../index.php">Cerrar Sesion</a>
             </div>
         </div>
