@@ -37,8 +37,7 @@ $idProject = $_SESSION["id_project"];
                         <tr>
                             
                             <td>
-                                <textarea name="sintomas" class="textArea" readonly>
-                                <?php
+                                <textarea name="sintomas" class="textArea" readonly><?php
                                 // Consulta para obtener los síntomas
                                 $sql = "SELECT descripcion FROM aporte WHERE idproyecto = $idProject AND idtipoaporte = 1";
                                 $result = mysqli_query($cn, $sql);
