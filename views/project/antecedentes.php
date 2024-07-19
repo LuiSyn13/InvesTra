@@ -25,19 +25,19 @@ $idProject = $_SESSION["id_project"];
     <div class="container">
         <div class="content-info-project" style="width: 95%">
             <center>
-                <form action="" style="width: 1250px">
+                <form action="../../controllers/project/p-antecedentes.php" method="post" style="width: 1250px">
                     <div class="content-form">
                         <table>
                             <tr>
                                 <td width="500px">
                                     Tipo de antecedente:
-                                    <select name="">
+                                    <select name="lsttantecedente" required>
                                         <option value="" disabled selected>
                                             Seleccione el tipo de antecedente
                                         </option>
-                                        <option value="">Nacional</option>
-                                        <option value="">Internacional</option>
-                                        <option value="">Local</option>
+                                        <option value="1">Nacional</option>
+                                        <option value="2">Internacional</option>
+                                        <option value="3">Local</option>
                                     </select>
                                 </td>
                                 <td>
@@ -58,13 +58,13 @@ $idProject = $_SESSION["id_project"];
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="autor" id="" style="width: 95%">
+                                        <input type="text" name="autor_inv" required style="width: 95%">
                                     </td>
                                     <td colspan="2">
-                                        <input type="text" name="" id="titulo" style="width: 95%">
+                                        <input type="text" name="titulo_inv" id="titulo" required style="width: 95%">
                                     </td>
                                     <td>
-                                        <input type="date" name="" id="año" style="width: 95%">
+                                        <input type="date" name="año_inv" id="año" required style="width: 95%">
                                     </td>
                                 </tr>
                                 <tr>
@@ -75,7 +75,7 @@ $idProject = $_SESSION["id_project"];
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="grtitulo" id="" style="width: 100%">
+                                        <select name="grtitulo" required style="width: 100%">
                                             <option value="" disabled selected>
                                                 Seleccione el grado o título
                                             </option>
@@ -85,13 +85,13 @@ $idProject = $_SESSION["id_project"];
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="text" name="" id="" style="width: 95%">
+                                        <input type="text" name="uni_inv" required style="width: 95%">
                                     </td>
                                     <td>
-                                        <input type="text" name="" id="" style="width: 95%">
+                                        <input type="text" name="nacion_inv" required style="width: 95%">
                                     </td>
                                     <td>
-                                        <input type="text" name="" id="" style="width: 95%">
+                                        <input type="text" name="muestra_inv" required style="width: 95%">
                                     </td>
                                 </tr>
                                 <tr>
@@ -101,13 +101,13 @@ $idProject = $_SESSION["id_project"];
                                 </tr>
                                 <tr>
                                     <td rowspan="2">
-                                        <textarea name="" id="" style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
+                                        <textarea name="objGen_inv" required style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
                                     </td>
                                     <td rowspan="2" colspan="2">
-                                        <textarea name="" id="" style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
+                                        <textarea name="recom_inv" required style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
                                     </td>
                                     <td rowspan="2">
-                                        <textarea name="" id="" style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
+                                        <textarea name="concl_inv" required style="width: 95%; height: 150px; resize: none; border-radius: 10px; background-color: #EEEEEE; border: 0"></textarea>
                                     </td>
                                 </tr>
                                 <tr>

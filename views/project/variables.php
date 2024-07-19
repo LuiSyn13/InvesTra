@@ -69,15 +69,22 @@ $idProject = $_SESSION["id_project"];
                             $array = array();
                             $descDep = "";
                             $descInd = "";
-                            if (isset($filaVar)) {
+                            
+                            if ($filaVar) {
                                 while ($r = mysqli_fetch_assoc($filaVar)) {
                                     if (isset($r["nomtipovariable"])) {
                                         $array[] = $r["descripcion"];
-                                    }                                    
+                                    }
                                 }
-                                $descDep = $array[0];
-                                $descInd = $array[1];
+                                if (isset($array[0])) {
+                                    $descDep = $array[0];
+                                }
+                                
+                                if (isset($array[1])) {
+                                    $descInd = $array[1];
+                                }
                             }
+                
                             ?>
                             <td align="center">
                                 <br><input type="text" name="var_dep" placeholder="Variable dependiente..." required class="inp_var" value="<?php echo $descDep; ?>">
