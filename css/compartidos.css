@@ -1,3 +1,49 @@
+.table-container {
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.table-container th,
+.table-container td {
+    padding: 8px;
+    text-align: center;
+}
+
+.table-container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    border: 1px solid #d3d3d3;
+}
+
+.table-container td {
+    border: 1px solid #d3d3d3;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn-view {
+    background-color: #00b2ff;
+}
+
+.btn-edit {
+    background-color: #ffb800;
+}
+
+.btn-delete {
+    background-color: #ff3535;
+}
+
+.btn-send {
+    background-color: #14ff00;
+}
+
 .boton-modal label{
     padding: 10px 12px;
     color: black;
