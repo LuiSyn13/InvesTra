@@ -45,6 +45,7 @@ $idProject = $_SESSION["id_project"];
                         $nomEmp = "";
                         $dirEmp = "";
                         $fecInt = date("Y-m-d");
+                        $fecFin = "";
                         $desEmp = "";
 
                         $tQuery = "new";
