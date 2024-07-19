@@ -20,4 +20,5 @@
     $sql = "INSERT INTO antecedentes (idtipoantecedente, autor, titulo, año, grtitulo, universidad, nacionalidad, objetivog, muestra, recomendaciones, conclusiones, idproyecto) VALUES 
     ($tantec, '$autor', '$titulo', '$año', '$gradot', '$uni', '$nacion', '$objg', '$muestra', '$recom', '$concl', $idProject)";
     mysqli_query($cn, $sql);
+    header("Location: ../../views/project/antecedentes.php");
 ?>

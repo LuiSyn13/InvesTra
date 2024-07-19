@@ -330,4 +330,5 @@
             break;
     }
     mysqli_close($cn);
+    header("Location: ../../views/project/pro_obj_hip.php?tpo=$tipo_aporte")
 ?>
