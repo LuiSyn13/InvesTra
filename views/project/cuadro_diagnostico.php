@@ -93,7 +93,7 @@ $idProject = $_SESSION["id_project"];
                 </table>
                 </fieldset>
                 <div class="btn_gdata_card">
-                    <button class="btn_gdata" onclick="submitForm()">Obtener descripción de la realidad problemática</button>
+                    <a class="btn_gdata" href="mostrar_realidad.php">Obtener descripción de la realidad problemática</a>
                 </div>
             </div>
         </div>
