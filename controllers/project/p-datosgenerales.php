@@ -18,17 +18,28 @@ switch ($tConsulta) {
     case "new":
         $sql = "INSERT INTO proyecto (dni, nomproyecto, nomempresa, direccion, periodo, descripcion, fechacreacion)
             VALUES ('$idUser', '$nomPro', '$nomEmp', '$dirEmp','$fInicio - $fFin', '$descNeg', '$fAct')";
+        
+        mysqli_query($cn, $sql);
+
+        $id = mysqli_insert_id($cn);
+
+        $_SESSION["id_project"] = $id;
+
+        mysqli_close($cn);
+        
+        header("Location: ../../views/project/datosgenerales.php");
+
         break;
 
     case "edit":
         $sql = "UPDATE proyecto
             SET nomproyecto = '$nomPro', nomempresa = '$nomEmp', direccion = '$dirEmp', periodo ='$fInicio - $fFin', descripcion = '$descNeg', fechamodificacion = '$fAct'
             WHERE idproyecto = $idProyecto";
+
+        mysqli_query($cn, $sql);
+        mysqli_close($cn);
+        
+        header("Location: ../../views/project/datosgenerales.php");
         break;
 }
-
-mysqli_query($cn, $sql);
-mysqli_close($cn);
-
-header("Location: ../../views/project/datosgenerales.php");
 ?>
