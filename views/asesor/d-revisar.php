@@ -27,7 +27,7 @@
                 <embed src="../../database/pdf/pdf-project/<?php echo $idpro.".pdf";?>" type="application/pdf">
             </div>
             <div class="desc_pdf">
-                <span>Añadir comentario<?php echo $idre;?></span>
+                <span>Añadir comentario:</span>
                 <form action="../../controllers/asesor/p-revisar_proyecto.php" method="post">
                     <textarea name="recomendacion" class="textA_rev"><?php
                     $sql = "SELECT*FROM revision WHERE idrevision = $idre AND idproyecto = $idpro AND dniasesor = '$idUser'";

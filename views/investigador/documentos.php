@@ -104,8 +104,7 @@
                                         <div class="form-group">
                                         <label for="cboasesor">Asesor:</label>
                                         <input type="hidden" name="idproject" id="idproject">
-                                        <input type="hidden" name="usuario" value="<?php echo $idUser;?>">
-                                        <select name="cboasesor" id="cboasesor">
+                                        <select name="cboasesor" id="idasesor">
                                             <!--<option value="" disabled selected>Seleccione al asesor</option>-->
                                             <?php
                                                 $sqlAsesor = "SELECT*FROM asesor ase INNER JOIN especialidad es ON ase.idespecialidad = es.idespecialidad";                                                

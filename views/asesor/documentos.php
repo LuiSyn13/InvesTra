@@ -13,6 +13,8 @@ $idUser = $_SESSION["user"];
     include("../template/link_head.php");
     ?>
     <link rel="stylesheet" href="../../css/asesor/document.css">
+    <link rel="stylesheet" href="../../css/documentos.css">
+
 </head>
 
 <body>
@@ -46,26 +48,50 @@ $idUser = $_SESSION["user"];
                         while ($r = mysqli_fetch_assoc($filaProject)) {
                             if ($r["estado"] == "Pendiente") {
                                 $size_nome = strlen($r["nomproyecto"]);
-                                if($size_nome > 50) {
-                                    $nomePro = substr($r["nomproyecto"], 0, 47).'...';
+                                if ($size_nome > 50) {
+                                    $nomePro = substr($r["nomproyecto"], 0, 47) . '...';
                                 } else {
                                     $nomePro = $r["nomproyecto"];
                                 }
-                            $nomUser = $r["apaterno"].' '.$r["amaterno"].' '.$r["nombre"];
-                            if(strlen($nomUser) > 25) {
-                                $nomUser = substr($nomUser, 0, 22)."...";
-                            }
+                                $nomUser = $r["apaterno"] . ' ' . $r["amaterno"] . ' ' . $r["nombre"];
+                                if (strlen($nomUser) > 25) {
+                                    $nomUser = substr($nomUser, 0, 22) . "...";
+                                }
                         ?>
                                 <tr>
-                                    <td><?php echo $nomePro;?></td>
-                                    <td><?php echo $r["nomempresa"];?></td>
-                                    <td><?php echo $nomUser;?></td>
-                                    <td class="option-date"><?php echo $r["estado"];?></td>
-                                    <td><?php echo substr($r["fechaenvio"], 0, 10);?></td>
+                                    <td><?php echo $nomePro; ?></td>
+                                    <td><?php echo $r["nomempresa"]; ?></td>
+                                    <td><?php echo $nomUser; ?></td>
+                                    <td class="option-date"><?php echo $r["estado"]; ?></td>
+                                    <td><?php echo substr($r["fechaenvio"], 0, 10); ?></td>
                                     <td class="option-date"><button class="btn btn-view">Visualizar</button></td>
                                     <td class="option-date">
-                                        <a href="d-revisar.php?idre=<?php echo $r["idrevision"].'&idpro='.$r["idproyecto"];?>" class="btn btn-revise">Revisar</a>
-                                        <a href="d-enviar.php" class="btn btn-send">Enviar</a>
+                                        <a href="d-revisar.php?idre=<?php echo $r["idrevision"] . '&idpro=' . $r["idproyecto"]; ?>" class="btn btn-revise">Revisar</a>
+                                        <a href="#" class="btn btn-send" id="btn-abrir-modal" 
+                                        data-nomproyecto="<?php echo $r['recomendaciones']; ?>" 
+                                        data-idproyecto="<?php echo $r["idproyecto"]; ?>"
+                                        data-idrevision="<?php echo $r["idrevision"];?>">Enviar</a>
+
+                                        <div id="modal">
+                                            <h3>Recomendaciones</h3>
+                                            <span>
+                                                <center id="modal-nomproyecto"></center>
+                                            </span>
+                                            <form action="../../controllers/project/p-enviar_proyecto.php" method="post">
+                                                <div class="form-group">
+                                                    <input type="hidden" name="idrevision" id="idrevision">
+                                                    <input type="hidden" name="idproject" id="idproject">
+                                                    <input type="hidden" name="idasesor" value="<?php echo $idUser; ?>">
+                                                </div>
+                                                <div class="modal-buttons">
+                                                    <input type="submit" class="btn btn-send" style="font-weight: bold; border-radius: 10px">
+                                                    <a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal">Cancelar</a>
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                        <div class="modal-background" id="modal-background"></div>
                                     </td>
                                 </tr>
 
@@ -78,6 +104,7 @@ $idUser = $_SESSION["user"];
             </div>
         </div>
     </div>
+<script src="../../js/modal_doc.js"></script>
 </body>
 
 </html>
