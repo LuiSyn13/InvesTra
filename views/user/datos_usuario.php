@@ -8,6 +8,11 @@ $sql = "select * from $tuser where dni = '$idUser';";
 $fila = mysqli_query($cn, $sql);
 $dato = mysqli_fetch_assoc($fila);
 
+$fnome = $dato["nombre"][0];
+$fape = $dato["apaterno"][0];
+
+$img = 
+
 $sqle = "select * from datosespecificos where dni = '$idUser';";
 $filae = mysqli_query($cn, $sqle);
 $datoe = mysqli_fetch_assoc($filae);
@@ -18,11 +23,11 @@ $datoe = mysqli_fetch_assoc($filae);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Generales</title>
+    <title>Datos del Usuario</title>
     <?php
     include("../template/link_head.php");
     ?>
-    <link rel="stylesheet" href="../../css/datos_personales.css">
+    <link rel="stylesheet" href="../../css/datos_usuario.css">
 </head>
 
 <body>
@@ -31,8 +36,29 @@ $datoe = mysqli_fetch_assoc($filae);
     ?>
     <div class="container">
         <div class="sidebar">
-            <img src="https://via.placeholder.com/80" alt="Profile Picture">
-            <a href="#" class="change-photo-link">Cambiar foto de perfil</a>
+            <?php
+            $file_path = "../../img/profile/$idUser.jpg";
+
+            if(file_exists($file_path)){
+            ?>
+                <img src="../../img/profile/<?php echo $idUser; ?>.jpg" width="80" height="80">
+            <?php
+            } else {
+                $file_path = "../../img/profile/$idUser.png";
+                if(file_exists($file_path)){
+                    ?>
+                        <img src="../../img/profile/<?php echo $idUser; ?>.png" width="80" height="80">
+                    <?php
+                    } else {
+                    ?>
+                    <div class="user_icon" style="cursor: default; width: 80px; height:80px; color:white; font-size:40px" id="user_icon">
+                        <?php echo $fnome.$fape; ?></a>
+                    </div>
+                    <?php    
+                }
+            }
+            ?>
+        
             <h2>
                 <center><?php echo $dato["apaterno"]." ".$dato["amaterno"]." ".$dato["nombre"]; ?></center>
             </h2>
@@ -50,16 +76,30 @@ $datoe = mysqli_fetch_assoc($filae);
                 }
                 ?>
             </p>
-            <a href="../investigador/datos_personales.php?tpo=1">
+            <div>
+            <a href="../user/datos_usuario.php?tpo=1">
                 <div class="nav-link <?php echo (!isset($_GET['tpo']) || $_GET['tpo'] == 1) ? 'selected' : ''; ?>">
                     <img src="../../img/icons_user/personales.png" class="icon-nav" alt="">Datos Personales
                 </div>
             </a>
-            <a href="../investigador/datos_personales.php?tpo=2">
+            <a href="../user/datos_usuario.php?tpo=2">
                 <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 2) ? 'selected' : ''; ?>">
                     <img src="../../img/icons_user/especificos.png" class="icon-nav" alt="">Datos Específicos
                 </div>
             </a>
+            <a href="../user/datos_usuario.php?tpo=3">
+                <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 3) ? 'selected' : ''; ?>">
+                    <img src="../../img/icons_user/fotoperfil.png" class="icon-nav" alt="">Cambiar Foto de Perfil
+                </div>
+            </a>
+            <a href="../user/datos_usuario.php?tpo=4">
+                <div class="nav-link <?php echo (isset($_GET['tpo']) && $_GET['tpo'] == 4) ? 'selected' : ''; ?>">
+                    <img src="../../img/icons_user/cambiarpass.png" class="icon-nav" alt="">Cambiar Contraseña
+                </div>
+            </a>
+            </div>
+            <br><br><br><br><br>
+            <a href="../../controllers/project/p-cerrar_proyecto.php" class="a_home"><img src="../../img/icons_document/home.png" style="margin-top:5px;width:30px; height:30px">Volver al inicio</a>
         </div>
         <?php
         if (isset($_GET["tpo"])) {
@@ -67,6 +107,8 @@ $datoe = mysqli_fetch_assoc($filae);
             switch($tipo) {
                 case 1: $titulo = "Datos Personales"; break;
                 case 2: $titulo = "Datos Específicos"; break;
+                case 3: $titulo = "Cambiar Foto de Perfil"; break;
+                case 4: $titulo = "Cambiar Contraseña"; break;
             }
         } else {
             $tipo = 1;
@@ -76,7 +118,7 @@ $datoe = mysqli_fetch_assoc($filae);
         <div class="main-content">
             <h1><?php echo $titulo; ?></h1>
             <br>
-            <form id="dataForm" action="../../controllers/actualizar_datos.php" method="post">
+            <form id="dataForm" action="../../controllers/actualizar_datos.php" method="post" enctype="multipart/form-data">
                 <?php 
                 switch ($tipo) {
                     case 1:
@@ -183,6 +225,7 @@ $datoe = mysqli_fetch_assoc($filae);
                                         ?>
                                     </select>
                                 </div>
+                                <br>
                                 <?php
                                 break;
                         } ?>
@@ -195,14 +238,38 @@ $datoe = mysqli_fetch_assoc($filae);
                             <input type="text" id="celular" name="celular" placeholder="Ingrese su número de celular" value="<?php echo $datoe['celular']; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="correo">Correo</label>
+                            <label for="correo">Correo:</label>
                             <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" value="<?php echo $datoe['correo']; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="direccion">Dirección</label>
+                            <label for="direccion">Dirección:</label>
                             <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección" value="<?php echo $datoe['direccion']; ?>" required>
                         </div>
+                        <br>
                 <?php
+                        break;
+                    case 3:
+                        ?>    
+                        <p><center><input type="file" name="archivo" required></center></p>
+                        <br>
+                        <?php
+                        break;
+                    case 4:
+                        ?>    
+                        <div class="form-group">
+                            <label for="contra-actual">Contraseña Actual:</label>
+                            <input type="password" id="actual" name="actual" placeholder="Ingrese su contraseña actual" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contra-nueva">Nueva Contraseña:</label>
+                            <input type="password" id="nuevo" name="nuevo" placeholder="Ingrese su nueva contraseña" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmar-contra">Confirmar Contraseña:</label>
+                            <input type="password" id="confirmar" name="confirmar" placeholder="Ingrese su nueva contraseña nuevamente" required>
+                        </div>
+                        <br>
+                        <?php
                         break;
                 }
                 ?>
@@ -210,6 +277,13 @@ $datoe = mysqli_fetch_assoc($filae);
                 <div>
                     <input type="hidden" name="tipo" value="<?php echo $tipo;?>">
                     <button type="button" id="acceptButton" class="btn-save">Guardar cambios</button>
+                    <br>
+                    <?php
+                    if(isset($_GET["msj"])){
+                        $mensaje=$_GET["msj"];
+                        echo "<center><h2 id='titulo'>$mensaje</h2></center>";
+                    }
+                    ?>
                 </div>
                 </center>
             </form>

@@ -37,11 +37,15 @@ $idUser = $_SESSION["user"];
                     </div>
                     <div class="body_inbox">
                         <?php
-                        $sqlProject = "SELECT rev.*, pro.* FROM revision rev LEFT JOIN proyecto pro ON rev.idproyecto = pro.idproyecto 
-                                        WHERE rev.dniasesor = '$idUser' AND rev.estado = 'Enviado'";
+                        $sqlProject = "SELECT rev.*, pro.*, investigador.* FROM revision rev LEFT JOIN proyecto pro ON rev.idproyecto = pro.idproyecto, investigador
+                                        WHERE rev.dniasesor = '$idUser' AND rev.estado = 'Enviado' AND pro.dni = investigador.dni";
                         $filaProject = mysqli_query($cn, $sqlProject);
                         while ($r = mysqli_fetch_assoc($filaProject)) {
                             if ($r["estado"] == "Enviado") {
+                                $size_nome = strlen($r["nomproyecto"]);
+                                if($size_nome > 30) {
+                                    
+                                }
                         ?>
                                 <div class="content_msn_projet">
                                     <div class="info_msn_project">
@@ -50,7 +54,7 @@ $idUser = $_SESSION["user"];
                                             <a href="" style="text-decoration: none; padding: 5px; background: #ffb800;">C. de diagnóstico</a>
                                         </div>
                                         <div>
-                                            <span>Julano Menguano</span>
+                                            <span><?php echo $r["apaterno"]." ".$r["amaterno"]." ".$r["nombre"];?></span>
                                             <span>Fecha de envío: 10/07/2024</span>
                                         </div>
                                     </div>

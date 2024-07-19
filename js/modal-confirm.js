@@ -11,5 +11,5 @@ function showModal() {
     setTimeout(function () {
         modal.style.display = "none";
         document.getElementById("dataForm").submit();
-    }, 2000);
+    }, 500);
 }
