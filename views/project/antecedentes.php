@@ -64,7 +64,7 @@ $idProject = $_SESSION["id_project"];
                                         <input type="text" name="titulo_inv" id="titulo" required style="width: 95%">
                                     </td>
                                     <td>
-                                        <input type="date" name="año_inv" id="año" required style="width: 95%">
+                                        <input type="text" name="año_inv" id="año" required style="width: 95%">
                                     </td>
                                 </tr>
                                 <tr>
