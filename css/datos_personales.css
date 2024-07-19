@@ -46,23 +46,41 @@ body {
 
 .sidebar .nav-link {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 5px;
+    margin: 5px 0px;
     text-align: center;
     text-decoration: none;
     color: black;
     background-color: #ccc;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .sidebar .nav-link:hover {
     background-color: #bbb;
 }
 
+.sidebar .nav-link img {
+    border-radius: 0%;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar .nav-link.selected {
+    background-color: #333;
+    color: white;
+}
+
+.sidebar a{
+    text-decoration: none;
+}
+
 .main-content {
- flex: 1;
-padding: 40px;
-max-width: 600px;
+    flex: 1;
+    padding: 40px;
+    max-width: 600px;
 }
 .main-content h1 {
     margin-bottom: 20px;
