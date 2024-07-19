@@ -89,7 +89,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT p.nomproyecto as titulo, r.dniasesor as asesor, r.estado as estado, p.fechamodificacion as abierto, 
+                        $sql = "SELECT p.idproyecto as idproyecto, p.nomproyecto as titulo, r.dniasesor as asesor, r.estado as estado, p.fechamodificacion as abierto, 
                                             p.fechacreacion as creacion
                                     FROM asesor a INNER JOIN revision r on a.dni = r.dniasesor RIGHT JOIN proyecto p on r.idproyecto = p.idproyecto
                                     WHERE p.dni = '$idUser'
@@ -99,11 +99,31 @@
                         while ($r = mysqli_fetch_assoc($fila)) {
                         ?>
                         <tr>
-                            <td><?php echo $r["titulo"] ?></td>
+                            <td>
+                            <?php 
+                            $size_nome = strlen($r["titulo"]);
+                            if($size_nome > 60) {
+                                $nomePro = substr($r["titulo"], 0, 57).'...';
+                            } else {
+                                $nomePro = $r["titulo"];
+                            }
+                            ?>
+                            <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"];?>">
+                            <?php
+                            echo $nomePro; 
+                            ?>
+                            </a>
+                            </td>
                             <td>
                             <?php 
                             if(isset($r["asesor"])){
-                                echo $r["asesor"];
+                                $size_ase = strlen($r["asesor"]);
+                                if($size_ase > 35) {
+                                    $nomeAse = substr($r["asesor"], 0, 32).'...';
+                                } else {
+                                    $nomeAse = $r["asesor"];
+                                }
+                                echo $nomeAse; 
                             } else { ?>
                             
                              <i>Sin asignar</i>

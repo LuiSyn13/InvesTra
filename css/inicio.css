@@ -3,6 +3,10 @@
     font-family: Arial, sans-serif;
 }
 
+.table-container a{
+    text-decoration: none;
+}
+
 .table-container th,
 .table-container td {
     padding: 8px;
