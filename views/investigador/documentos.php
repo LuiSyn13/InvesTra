@@ -61,8 +61,8 @@
                             ?>
                             </td>
                             <td><?php 
-                            
-                            $sqle = "SELECT COUNT(*) as cantidad FROM antecedentes WHERE idproyecto = $r[idproyecto]";
+                            $idpro = $r["idproyecto"];
+                            $sqle = "SELECT COUNT(*) as cantidad FROM antecedentes WHERE idproyecto = $idpro";
                             $filae = mysqli_query($cn, $sqle);
                             $re = mysqli_fetch_assoc($filae);
                             if ($re['cantidad'] >= '2') {
