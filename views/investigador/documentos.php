@@ -38,8 +38,28 @@
                         while ($r = mysqli_fetch_assoc($fila)) {
                         ?>
                         <tr>
-                            <td><?php echo $r["nomproyecto"] ?></td>
-                            <td><?php echo $r["nomempresa"] ?></td>
+                            <td>
+                            <?php 
+                            $size_nome = strlen($r["nomproyecto"]);
+                            if($size_nome > 50) {
+                                $nomePro = substr($r["nomproyecto"], 0, 47).'...';
+                            } else {
+                                $nomePro = $r["nomproyecto"];
+                            }
+                            echo $nomePro; 
+                            ?>
+                            </td>
+                            <td>
+                            <?php
+                            $size_emp = strlen($r["nomempresa"]);
+                            if($size_emp > 35) {
+                                $nomeEmp = substr($r["nomempresa"], 0, 32).'...';
+                            } else {
+                                $nomeEmp = $r["nomempresa"];
+                            }
+                            echo $nomeEmp; 
+                            ?>
+                            </td>
                             <td><?php 
                             
                             $sqle = "SELECT COUNT(*) as cantidad FROM antecedentes WHERE idproyecto = $r[idproyecto]";
