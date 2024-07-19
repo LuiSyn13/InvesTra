@@ -34,27 +34,20 @@ $idProject = $_SESSION["id_project"];
                             <td align="center" rowspan="3">
                                 <br>
                                 <textarea class="txtArea_desc" name="" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; outline: none; cursor: auto;" placeholder="<?php for ($i = 1; $i <= 4; $i++) echo "Sintoma $i" . "\n" ?>" readonly><?php
-                                                                                                                                                                                                                                                                $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
-                                                                                                                                                                                                                                                                $fila = mysqli_query($cn, $sql);
-                                                                                                                                                                                                                                                                while ($r = mysqli_fetch_assoc($fila)) {
-                                                                                                                                                                                                                                                                    if ($r["idtipoaporte"] == 1) {
-                                                                                                                                                                                                                                                                        echo "- " . $r["descripcion"] . "\n";
-                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                ?></textarea>
+                                                                                                                                                                                                                        ?></textarea>
                             </td>
                             <td></td>
                             <td align="Center" rowspan="3">
                                 <br>
                                 <textarea class="txtArea_desc" id="" style="width: 80%; height: 250px; resize: none; border-radius: 8px; outline: none; cursor: auto;" placeholder="<?php for ($i = 1; $i <= 4; $i++) echo "Causa $i" . "\n" ?>" readonly><?php
-                                                                                                                                                                                                                                                        $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
-                                                                                                                                                                                                                                                        $fila = mysqli_query($cn, $sql);
-                                                                                                                                                                                                                                                        while ($r = mysqli_fetch_assoc($fila)) {
-                                                                                                                                                                                                                                                            if ($r["idtipoaporte"] == 2) {
-                                                                                                                                                                                                                                                                echo "- " . $r["descripcion"] . "\n";
-                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                        ?></textarea>
+                            $sql = "SELECT*FROM aporte WHERE aporte.idproyecto = $idProject";
+                            $fila = mysqli_query($cn, $sql);
+                            while ($r = mysqli_fetch_assoc($fila)) {
+                                if ($r["idtipoaporte"] == 2) {
+                                    echo "- " . $r["descripcion"] . "\n";
+                                }
+                            }
+                            ?></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -71,7 +64,7 @@ $idProject = $_SESSION["id_project"];
                         <tr>
                             <?php
                             $sqlVar = "SELECT * FROM variable va INNER JOIN tipovariable tv ON va.idtipovariable = tv.idtipovariable WHERE idproyecto = $idProject
-                                            ORDER BY tv.nomtipovariable ASC";
+                            ORDER BY tv.nomtipovariable ASC";
                             $filaVar = mysqli_query($cn, $sqlVar);
                             $array = array();
                             $descDep = "";
