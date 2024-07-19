@@ -1,6 +1,7 @@
 <?php
     include("../../controllers/auth.php");
     $idUser = $_SESSION["user"];
+    $idpro = $_GET["idpro"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +23,7 @@
     <div class="container">
         <div class="content_rev">
             <div class="read_pdf">
-                <embed src="../../database/pdf/IO - Piko's Grill.pdf" type="application/pdf">
+                <embed src="../../database/pdf/pdf-project/<?php echo $idpro.".pdf";?>" type="application/pdf">
             </div>
             <div class="desc_pdf">
                 <span>Añadir comentario</span>
