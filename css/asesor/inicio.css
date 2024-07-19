@@ -89,10 +89,16 @@
    place-items: center;
    border-radius: 0 5px 5px 0;
    font-family: Arial, Helvetica, sans-serif;
+   cursor: pointer;
+   text-decoration: none;
 }
 
-.option_first_msn {
+.option_first_msnAp {
     background: #00B2FF;
+}
+
+.option_first_msnRe {
+    background: #00ff2f;
 }
 
 .option_second_msn {

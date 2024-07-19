@@ -26,7 +26,7 @@ switch ($tConsulta) {
             WHERE idproyecto = $idProyecto";
         break;
 }
-
+/* Obtener e iniciar session =  */
 mysqli_query($cn, $sql);
 mysqli_close($cn);
 

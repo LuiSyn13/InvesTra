@@ -107,6 +107,10 @@ $pdf->MultiCell(0, 10, '2024', 0, 'C');
 
 $pdf->AddPage();
 
+$urlPdf = '../../database/pdf/pdf-project/'.$idUser.'.pdf';
 
-$pdf->Output();
+$pdf->Output('F', $urlPdf);
 ?>
+<script>
+    window.open('<?php echo $urlPdf;?>', '_blank')
+</script>
