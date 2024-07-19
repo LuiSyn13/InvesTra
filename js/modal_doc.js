@@ -6,10 +6,15 @@ const modalNomproyecto = document.querySelector("#modal-nomproyecto");
 
 btnAbrirModal.forEach(btn => {
     btn.addEventListener("click", (event) => {
+        const iptPro = document.getElementById("idproject");
         const nomproyecto = event.target.getAttribute("data-nomproyecto");
+        const idproyecto = event.target.getAttribute("data-idproyecto");
+        console.log(idproyecto);
         modalNomproyecto.textContent = nomproyecto;
+        iptPro.value = idproyecto;
         modal.style.display = "block";
         modalBackground.style.display = "block";
+
     });
 });
 

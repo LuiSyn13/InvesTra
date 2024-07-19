@@ -59,23 +59,34 @@
                             </td>
                             <td><a href="Visualizar.php?idproyecto=<?php echo $r['idproyecto']; ?>" class="btn btn-view">Visualizar</a></td>
                             <td>
-                                <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto']; ?>">Enviar</a>
+                                <a href="#" class="btn btn-send" id="btn-abrir-modal" data-nomproyecto="<?php echo $r['nomproyecto'];?>" data-idproyecto = "<?php echo $r["idproyecto"];?>">Enviar</a>
 
                                 <div id="modal">
                                     <h2><center id="modal-nomproyecto"></center></h2>
-                                    <div class="form-group">
+                                    <form action="../../controllers/project/p-enviar_proyecto.php" method="post">
+                                        <div class="form-group">
                                         <label for="cboasesor">Asesor:</label>
+                                        <input type="hidden" name="idproject" id="idproject">
+                                        <input type="hidden" name="usuario" value="<?php echo $idUser;?>">
                                         <select name="cboasesor" id="cboasesor">
-                                            <option value="" disabled selected>Seleccione al asesor</option>
-                                            <option value="" >Asesor A</option>
-                                            <option value="" >Asesor B</option>
-                                        </select>
-                                    </div>
-                                    <div class="modal-buttons">
-                                        <a href="#" class="btn btn-send" style="font-weight: bold; border-radius: 10px">Aceptar</a>
-                                        <a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal">Cancelar</a>
-                                    </div>
-
+                                            <!--<option value="" disabled selected>Seleccione al asesor</option>-->
+                                            <?php
+                                                $sqlAsesor = "SELECT*FROM asesor ase INNER JOIN especialidad es ON ase.idespecialidad = es.idespecialidad";                                                
+                                                $filaAsesor = mysqli_query($cn, $sqlAsesor);
+                                                while($ra = mysqli_fetch_assoc($filaAsesor)) {
+                                                    ?>
+                                                        <option value="<?php echo $ra["dni"];?>"><?php echo $ra["apaterno"]." ".$ra["amaterno"]." ".$ra["dni"]." - ".$ra["nomespecialidad"];?></option>
+                                                    <?php
+                                                }
+                                            ?>
+                                            </select>
+                                        </div>
+                                        <div class="modal-buttons">
+                                            <input type="submit" class="btn btn-send" style="font-weight: bold; border-radius: 10px">
+                                            <a href="#" class="btn btn-delete" style="font-weight: bold; border-radius: 10px" id="btn-cerrar-modal">Cancelar</a>
+                                        </div>
+                                    </form>
+                                    
                                 </div>
                                 
                                 <div class="modal-background" id="modal-background"></div>

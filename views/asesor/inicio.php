@@ -1,5 +1,7 @@
 <?php
-    include("../../controllers/auth.php")
+include("../../controllers/auth.php");
+include("../../controllers/connection.php");
+$idUser = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,7 +29,7 @@
                 <div class="inbox_projets">
                     <div class="head_inbox">
                         <span>Bandeja de entrada de documentos a revisión</span>
-                        <span><?php echo "1 - 20 de 100";?></span>
+                        <span><?php echo "1 - 20 de 100"; ?></span>
                         <div>
                             <a href="#"><img class="img-inicio-skip" src="../../img/icons_document/skip_previous.png"></a>
                             <a href="#"><img class="img-inicio-skip" src="../../img/icons_document/skip_next.png"></a>
@@ -35,29 +37,38 @@
                     </div>
                     <div class="body_inbox">
                         <?php
-                        for($i = 0; $i < 15; $i++) {
+                        $sqlProject = "SELECT rev.*, pro.*, investigador.* FROM revision rev LEFT JOIN proyecto pro ON rev.idproyecto = pro.idproyecto, investigador
+                                        WHERE rev.dniasesor = '$idUser' AND rev.estado = 'Enviado' AND pro.dni = investigador.dni";
+                        $filaProject = mysqli_query($cn, $sqlProject);
+                        while ($r = mysqli_fetch_assoc($filaProject)) {
+                            if ($r["estado"] == "Enviado") {
+                                $size_nome = strlen($r["nomproyecto"]);
+                                if($size_nome > 30) {
+                                    
+                                }
                         ?>
-                        <div class="content_msn_projet">
-                            <div class="info_msn_project">
-                                <div>
-                                <span class="title_span_msn">Titulo de la investigación</span>
-                                <a href="" style="text-decoration: none; padding: 5px; background: #ffb800;">C. de diagnóstico</a>
+                                <div class="content_msn_projet">
+                                    <div class="info_msn_project">
+                                        <div>
+                                            <span class="title_span_msn"><?php echo $r["nomproyecto"];?></span>
+                                            <a href="" style="text-decoration: none; padding: 5px; background: #ffb800;">C. de diagnóstico</a>
+                                        </div>
+                                        <div>
+                                            <span><?php echo $r["apaterno"]." ".$r["amaterno"]." ".$r["nombre"];?></span>
+                                            <span>Fecha de envío: 10/07/2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="options_msn_project">
+                                        <div class="option_msn option_first_msn">
+                                            <span>Aceptar</span>
+                                        </div>
+                                        <div class="option_msn option_second_msn">
+                                            <span>Rechazar</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span>Julano Menguano</span>
-                                    <span>Fecha de envío: 10/07/2024</span>
-                                </div>
-                            </div>
-                            <div class="options_msn_project">
-                                <div class="option_msn option_first_msn">
-                                    <span>Aceptar</span>
-                                </div>
-                                <div class="option_msn option_second_msn">
-                                    <span>Rechazar</span>
-                                </div>
-                            </div>
-                        </div>
                         <?php
+                            }
                         }
                         ?>
                     </div>
