@@ -20,7 +20,13 @@
         <div class="input-card" style="text-decoration: none; width:550px">
         <b><label class="txt_input" style="font-size:22px">¡Usted se ha registrado con éxito!</label></b>
         <b><label class="txt_input" style="font-size:22px">¡Bienvenido a InvesTra!</label></b>
-        <center><img src="../img/icons_register/registrado.png" alt="" width="90px"></center>
+        
+        <center>
+        <a href="../controllers/view_user.php">
+          <img src="../img/icons_register/registrado.png" alt="" width="90px">
+        </a>
+        </center>
+        <b><label class="txt_input" style="font-size:16px">Para ver sus datos de usuario, haga click en el ícono</label></b>
         </div>
         <div class="input-card2" style="background: none">
         <a href="../index.php" class="aceptar fondo">Iniciar sesión</a>
