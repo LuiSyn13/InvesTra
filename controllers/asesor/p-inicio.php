@@ -19,8 +19,8 @@
             header('Location: ../../views/asesor/inicio.php');
             break;
         case 3:
-            /*$sql = "UPDATE revision SET estado = 'Pendiente' WHERE idrevision = $idrevision";
-            mysqli_query($cn, $sql);*/
+            $sql = "UPDATE revision SET estado = 'Pendiente' WHERE idrevision = $idrevision";
+            mysqli_query($cn, $sql);
             header('Location: ../../views/asesor/d-revisar.php?idpro='.$idpro.'&idre='.$idrevision);
             break;
         case 4;

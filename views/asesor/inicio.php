@@ -79,7 +79,7 @@ $idUser = $_SESSION["user"];
                                     </div>
                                     <div class="options_msn_project">
                                         <a href="../../controllers/asesor/p-inicio.php?idre=<?php echo $r["idrevision"]."&est=".$estre."&idpro=".$r["idproyecto"];?>" class="option_msn" style="background: <?php echo $bgre;?>"><?php echo $text;?></a>
-                                        <a href="../../controllers/asesor/p-inicio.php?id=<?php echo $r["idrevision"]."&est=".$estom."&idpro=".$r["idproyecto"];?>" class="option_msn" style="background: <?php echo $bgom;?>"><?php echo $textom;?></a>
+                                        <a href="../../controllers/asesor/p-inicio.php?idre=<?php echo $r["idrevision"]."&est=".$estom."&idpro=".$r["idproyecto"];?>" class="option_msn" style="background: <?php echo $bgom;?>"><?php echo $textom;?></a>
                                     </div>
                                 </div>
                         <?php

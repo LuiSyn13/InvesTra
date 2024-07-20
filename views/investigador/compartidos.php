@@ -2,6 +2,7 @@
 include("../../controllers/auth.php");
 include("../../controllers/connection.php");
 $idProject = $_SESSION["id_project"];
+$idUser = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,6 +13,7 @@ $idProject = $_SESSION["id_project"];
     <title>Compartidos</title>
     <link rel="stylesheet" href="../css/proyecto.css">
     <link rel="stylesheet" href="../../css/compartidos.css">
+    <link rel="stylesheet" href="../../css/documentos.css">
     <?php
     include("../template/link_head.php");
     ?>
@@ -26,92 +28,76 @@ $idProject = $_SESSION["id_project"];
         include("../template/principal.php")
         ?>
         <div class="content_info">
-            Proyectos compartidos:
+            <h2><label style="font-family: Arial, Helvetica, sans-serif;">Proyectos compartidos:</label></h2>
             <br>
-            <br>
-            <br>
-                    <center>
-                        <table border="1" cellspacing="0" style="width: 85%; border-color: lightgrey;">
-                            <tr style="background-color: lightgrey;">
-                                <td align="center">Título</td>
-                                <td align="center">Asesor</td>
-                                <td align="center">Estado</td>
-                                <td align="center">F. de envío</td>
-                                <td align="center">F. de revisión</td>
-                                <td align="center">Opciones</td>
-                            </tr>
+            <center>
+                <div class="table-container">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
                             <tr>
-                                <td>Título de la investigación</td>
-                                <td>Nombre del Asesor</td>
-                                <td>
-                                    <?php 
-                                        $estado = "Pendiente";
-                                        echo $estado; 
-                                    ?>
-                                </td>
-                                <td>Fecha en la cual fue enviada</td>
-                                <td>Fecha en la cual fue revisada</td>
-                                <td>
-                                    <?php                                    
-                                        if($estado == "Pendiente"){
-                                            $button = "Cancelar envío";
-                                    ?>
-                                    <br>
-                                    <div class="boton-modal">
-                                        <center>
-                                            <label for="btn-modal" class="btn-1"><?php echo $button; ?></label>
-                                        </center>
-                                    </div>
-
-                                <input type="checkbox" id="btn-modal">
-                                <div class="container-modal">
-                                    <div class="content-modal">
-                                        <h2 align="center">*Título del Proyecto A*</h2>
-                                        <p align="center">¿Estás seguro que deseas cancelar el envío?</p>
-                                        <div class="btn">
-                                            <label for="btn-modal" class="cancelar">Cancelar</label>
-                                            <label for="btn-modal" class="aceptar">Aceptar</label>
-                                        </div>
-                                    </div>
-                                    <label for="btn-modal" class="cerrar-modal"></label>
-                                </div>
+                                <td>Título</td>
+                                <td>Asesor</td>
+                                <td>Estado</td>
+                                <td>F. de envío</td>
+                                <td>F. de revisión</td>
+                                <td>Opciones</td>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                            } else if ($estado == "Revisado") {
-                                $button = "Visualizar";
-                            ?>
-                                <br>
-                                <div class="boton-modal">
-                                    <center>
-                                        <label for="btn-modal" class="btn-2"><?php echo $button; ?></label>
-                                    </center>
-                                </div>
+                            $sql_c = "SELECT p.idproyecto as idproyecto, p.*, a.*,r.*
+                                    FROM proyecto p, asesor a, revision r
+                                    WHERE p.idproyecto = r.idproyecto
+                                    AND r.dniasesor = a.dni
+                                    AND p.dni = '$idUser'";
 
-                                <input type="checkbox" id="btn-modal">
-                                <div class="container-modal">
-                                    <div class="content-modal">
-                                        <h2 align="center">*Título del Proyecto A*</h2>
-                                        <p align="justify">
-                                            Asesor: *Asesor 2*<br>
-                                            Estado: Revisado<br>
-                                            Fecha de revisión: dd/mm/aa hh:mm<br>
-                                            Recomendaciones: <br>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                        <div class="btn-2">
-                                            <center>
-                                                <label for="btn-modal" class="aceptar">Aceptar</label>
-                                            </center>
-                                        </div>
-                                    </div>
-                                    <label for="btn-modal" class="cerrar-modal"></label>
-                                </div>
+                            $fila = mysqli_query($cn, $sql_c);
+                            while ($r_c = mysqli_fetch_assoc($fila)) {
+                            ?>
+
+                                <tr>
+                                    <td>
+                                        <?php
+                                        $size_nome = strlen($r_c["nomproyecto"]);
+                                        if ($size_nome > 50) {
+                                            $nomePro = substr($r_c["nomproyecto"], 0, 47) . '...';
+                                        } else {
+                                            $nomePro = $r_c["nomproyecto"];
+                                        }
+                                        echo $nomePro;
+                                        ?>
+                                    </td>
+                                    <td><?php echo $r_c["nombre"] . " " . $r_c["apaterno"] . " " . $r_c["amaterno"] ?></td>
+                                    <td>
+                                        <?php if($r_c["estado"] == "Proceso" ||$r_c["estado"] == "Pendiente" || $r_c["estado"] == "Enviado") {
+                                            $est = "Pendiente";
+                                            echo $est;
+                                        } else {
+                                            echo $r_c["estado"];
+                                        }
+                                        ?>
+                                    </td>
+                                    <td><?php echo $r_c["fechaenvio"]; ?></td>
+                                    <td><?php echo $r_c["fecharevision"]; ?></td>
+                                    <td>
+                                        <a href="#"></a>
+                                        <?php
+                                        if ($r_c["estado"] != "Revisado") {
+                                            $button = "Cancelar envío";
+                                            echo $button;
+                                        } else {
+                                            echo "Visualizar";
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
                             <?php
                             }
                             ?>
-                            <br>
-                        </td>
-                    </tr>
-                </table>
+                        </tbody>
+
+                    </table>
+                </div>
             </center>
         </div>
     </div>
