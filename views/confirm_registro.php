@@ -22,7 +22,7 @@
         <b><label class="txt_input" style="font-size:22px">¡Bienvenido a InvesTra!</label></b>
         
         <center>
-        <a href="../controllers/view_user.php">
+        <a href="../controllers/view_user.php" target="_blank">
           <img src="../img/icons_register/registrado.png" alt="" width="90px">
         </a>
         </center>

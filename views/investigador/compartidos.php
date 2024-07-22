@@ -80,7 +80,7 @@ $idUser = $_SESSION["user"];
                                     <td><?php echo $r_c["fechaenvio"]; ?></td>
                                     <td><?php echo $r_c["fecharevision"]; ?></td>
                                     <td>
-                                        <a href="#"></a>
+                                        <a href="#" class="btn btn-edit">
                                         <?php
                                         if ($r_c["estado"] != "Revisado") {
                                             $button = "Cancelar envío";
@@ -89,6 +89,8 @@ $idUser = $_SESSION["user"];
                                             echo "Visualizar";
                                         }
                                         ?>
+                                        </a>
+                                        
                                     </td>
                                 </tr>
                             <?php

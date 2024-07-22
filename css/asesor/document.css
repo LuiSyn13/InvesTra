@@ -63,9 +63,13 @@ th {
 
 
 /*  d - revisar   */
-.content_rev {
+.content_rev, .content_ver {
     display: flex;
     width: 100%;
+}
+
+.content_ver {
+    justify-content: center;
 }
 
 .read_pdf {
@@ -77,6 +81,18 @@ th {
         border-radius: 5px;
     }
 }
+
+.readver_pdf {
+    width: 100%;
+
+    embed {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+
+
 
 .desc_pdf {
     width: 50%;

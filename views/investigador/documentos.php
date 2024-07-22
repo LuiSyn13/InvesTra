@@ -74,7 +74,7 @@ $idUser = $_SESSION["user"];
                                             ?>
                                 </td>
                                 <td>
-                                    <a href="../project/descargar_proyecto.php" class="btn btn-view">Ver</a>
+                                    <a href="../project/ver_documento.php?idpro=<?php echo $r["idproyecto"];?>" class="btn btn-view" target="_blank">Ver</a>
                                     <a href="../../controllers/project/e-datosgenerales.php?ipt=<?php echo $r["idproyecto"]; ?>" class="btn btn-edit">Editar</a>
                                     <a href="#" class="btn btn-delete" id="btn-abrir-modal2" data-nomproyecto2="<?php echo $r['nomproyecto']; ?>" data-idproyecto2="<?php echo $r["idproyecto"]; ?>">Eliminar</a>
 
@@ -101,7 +101,7 @@ $idUser = $_SESSION["user"];
                                     </div>
                                     <div class="modal-background" id="modal-background2"></div>
                                 </td>
-                                <td><a href="Visualizar.php?idproyecto=<?php echo $r['idproyecto']; ?>" class="btn btn-view">Visualizar</a></td>
+                                <td><a href="../../controllers/project/ver_cdiagnostico.php?idproyecto=<?php echo $r['idproyecto']; ?>" class="btn btn-view">Visualizar</a></td>
                                 <td>
                                     <a href="#" class="btn btn-send" id="btn-abrir-modal" 
                                     data-nomproyecto="<?php echo $r['nomproyecto']; ?>" 
